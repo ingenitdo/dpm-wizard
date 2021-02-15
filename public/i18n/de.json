@@ -1,0 +1,43 @@
+{
+  "HEADER": {
+    "LABEL_DASHBOARD": "Zurück zum Start",
+    "LABEL_WIZARD": "Erstellung"
+  },
+  "PAGE": {
+    "DASHBOARD": {
+      "LINK_1": "Neuen Datenprozess erstellen",
+      "LINK_2": "Datenprozess öffnen",
+      "LINK_3": "Beispiel-Prozess öffnen",
+      "LINK_4": "Anleitungen"
+    },
+    "WIZARD": {
+      "BUTTON_1": "Einstellungen",
+      "BUTTON_2": "Vorschau",
+      "BUTTON_3": "Modell speichern",
+      "BUTTON_4": "Ergebnis für eigene Webseite exportieren"
+    }
+  },
+  "FIXEDLABELS": {
+    "headerSource": "Welche Daten werden wo erfasst?",
+    "headerPurpose": "Zielsetzung",
+    "headerProcess": "Welche Prozesse werden umgesetzt",
+    "detailedModel": "Wechseln zur ausführlichen Ansicht",
+    "simpleModel": "Wechseln zur vereinfachten Ansicht",
+    "legend": "Legende",
+    "policy": "Dauer und Ort der Speicherung",
+    "durationOfStorage": "Dauer der Speicherung",
+    "locationOfStorage": "Ort der Speicherung",
+    "permissions": "Benötigte Rechte vom Smartphone",
+    "listOfSources": "Quellenverzeichnis",
+    "revisionHistory": "Änderungshistorie",
+    "info": "weitere Informationen",
+    "close": "Schließen",
+    "credits": "Über",
+    "toolDescription": "Ein webbasiertes Tool zur Visualisierung von datengetriebenen Kundenprozessen",
+    "implementationBy": "Konzept und Umsetzung durch",
+    "sponsoredBy": "Gefördert durch",
+    "legalDisclaimer": "Die mit der Software dargestellten Inhalte werden vom Verwender der Software erstellt und sind den hier aufgeführten Organisationen weder bekannt noch durch diese geprüft.",
+    "legalNoticeLabel": "Rechtliche Hinweise",
+    "legalNotice": "<div>\n Rechtliche Hinweise\n        </div>\n        <div>\n          Copyright 2020 <a href=\"https://zentrum-digitalisierung.bayern/\" target=\"_blank\">Zentrum Digitalisierung.Bayern</a>, entwickelt von der <a href=\"https://www.concern.de/\" target=\"_blank\">Concern GmbH</a> und der <a href=\"https://www.ingenit.com/\" target=\"_blank\">ingenit GmbH&Co.KG</a><br />           \n          Die Software steht unter Apache 2.0 Lizenz und ist auf <a href=\"https://github.com/ingenitdo/dpm\" target=\"_blank\">GitHub</a> verf&#252;gbar.\n\n          <h3>Third Party Notices</h3>\n          <p>Die Software verwendet Komponenten von Dritten, die ggf. unter anderen Lizenzmodellen als diese Software ver&#246;ffentlicht sind. Sollte in dieser Liste eine Komponente fehlen, benachrichtigen Sie uns bitte unter info(at)ingenit.com.</p>\n          \n          <p>Komponenten:    \n          <table>\n            <tr>\n              <th>Name</th>\n              <th>Version</th>\n              <th>Lizenz</th>\n              <th>Link</th>\n            </tr>\n\n            <tr>\n              <td>@emotion/core</td>\n              <td>10.0.28</td>\n              <td>MIT</td>\n              <td>https://github.com/emotion-js/emotion/tree/master/packages/core</td>\n            </tr>\n            <tr>\n              <td>@emotion/styled</td>\n              <td>10.0.27</td>\n              <td>MIT</td>\n              <td>https://github.com/emotion-js/emotion/tree/master/packages/styled</td>\n            </tr>\n            <tr>\n              <td>@testing-library/jest-dom</td>\n              <td>4.2.4</td>\n              <td>MIT</td>\n              <td>https://github.com/testing-library/jest-dom.git,4.2.4</td>\n            </tr>\n            <tr>\n              <td>@testing-library/react</td>\n              <td>9.5.0</td>\n              <td>MIT</td>\n              <td>https://github.com/testing-library/react-testing-library</td>\n            </tr>\n            <tr>\n              <td>@testing-library/user-event</td>\n              <td>7.2.1</td>\n              <td>MIT</td>\n              <td>https://github.com/testing-library/user-event.git</td>\n            </tr>\n             <tr>\n              <td>@types/jest</td>\n              <td>24.9.1</td>\n              <td>MIT</td>\n              <td>https://github.com/DefinitelyTyped/DefinitelyTyped.git</td>\n            </tr>\n            <tr>\n              <td>@types/node</td>\n              <td>12.12.47</td>\n              <td>MIT</td>\n              <td>https://github.com/DefinitelyTyped/DefinitelyTyped.git</td>\n            </tr>\n            <tr>\n              <td>@types/react</td>\n              <td>16.9.41</td>\n              <td>MIT</td>\n              <td>https://github.com/DefinitelyTyped/DefinitelyTyped.git</td>\n            </tr>\n            <tr>\n              <td>@types/react-dom</td>\n              <td>16.9.8</td>\n              <td>MIT</td>\n              <td>https://github.com/DefinitelyTyped/DefinitelyTyped.git</td>\n            </tr>\n        <tr>\n              <td>emotion</td>\n              <td>10.0.27</td>\n              <td>MIT</td>\n              <td>https://github.com/emotion-js/emotion/tree/master/packages/emotion</td>\n            </tr>\n            <tr>\n              <td>react</td>\n              <td>16.13.1</td>\n              <td>MIT</td>\n              <td>https://github.com/facebook/react.git</td>\n            </tr>\n            <tr>\n              <td>react-dom</td>\n              <td>16.13.1</td>\n              <td>MIT</td>\n              <td>https://github.com/facebook/react.git</td>\n            </tr>\n            <tr>\n              <td>react-scripts</td>\n              <td>3.4.1</td>\n              <td>MIT</td>\n              <td>https://github.com/facebook/create-react-app.git</td>\n            </tr>\n            <tr>\n              <td>react-use</td>\n              <td>14.3.0</td>\n              <td>Unlicense</td>\n              <td>https://github.com/streamich/react-use.git</td>\n            </tr>\n            <tr>\n              <td>typescript</td>\n              <td>3.9.6</td>\n              <td>Apache-2.0</td>\n              <td>https://github.com/Microsoft/TypeScript.git</td>\n            </tr>\n\n          </table>\n          </p>\n\n        </div>"
+  }
+}

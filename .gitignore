@@ -1,0 +1,6 @@
+node_modules/
+.idea
+dpm-wizard.iml
+package-lock.json
+build
+tests/__image_snapshots__

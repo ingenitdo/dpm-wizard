@@ -1,0 +1,1 @@
+export const MODEL_VERSION = "1.1.0";

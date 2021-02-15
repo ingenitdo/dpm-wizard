@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "target": "es6",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "jsx": "react"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
