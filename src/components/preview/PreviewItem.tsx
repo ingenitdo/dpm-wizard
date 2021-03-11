@@ -31,7 +31,7 @@ const PreviewItem: React.FC<Props> = props => {
     x: width * 0.1,
     y: width * 0.05,
     width: props.isSettingsDialogPreview ? width * 0.5 : props.previewItem.width,
-    height: props.isSettingsDialogPreview ? width * 0.15 : props.previewItem.height,
+    height: props.isSettingsDialogPreview ? width * 0.15 : height*0.7,
   };
 
   return (

@@ -52,7 +52,7 @@ const SVGAction: React.FunctionComponent<Props> = props => {
 
   // short info color
   const shortInfoFill = (related ? boxType.shortInfoActiveBackground : boxType.shortInfoBackground) || "pink";
-  const shortInfoTextColor = related ? 'white' : boxType.textColorInactive;
+  const shortInfoTextColor = related ? boxType.textColor : boxType.textColorInactive;
 
   return (
     <g cursor={"pointer"}>

@@ -29,10 +29,10 @@ if(process.env.NODE_ENV === 'development') {
     let simpleModelUrl = container.getAttribute( "data-simple-model-url" );
     let canvasHeight = container.getAttribute( "canvasHeight" );
     if( !!detailedModelUrl ) {
-      fetch( detailedModelUrl ).then( detailedModelResponse => {
+      fetch( detailedModelUrl, {cache: "no-store"} ).then( detailedModelResponse => {
         detailedModelResponse.json().then( detailedModel => {
           if( !!simpleModelUrl ) {
-            fetch( simpleModelUrl ).then( simpleModelResponse => {
+            fetch( simpleModelUrl, {cache: "no-store"} ).then( simpleModelResponse => {
               simpleModelResponse.json().then( simpleModel => {
                 init( container!, canvasHeight || "100%", detailedModel, simpleModel );
               } )

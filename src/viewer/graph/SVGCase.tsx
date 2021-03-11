@@ -1,6 +1,6 @@
 import * as React from "react";
 import { getStringArrayByWidth } from "../utils/Processing";
-import { CASE_HEADER_HEIGHT, CASE_HEADER_LABEL_SIZE } from "../Constants";
+import { CASE_HEADER_HEIGHT, CASE_HEADER_LABEL_SIZE, TEXT_SPACING } from "../Constants";
 import { SVGText } from "./SVGText";
 import { renderIconArrowDown, renderIconArrowUp, renderInfoButton } from "./SVGIcons";
 import { getAbsoluteValue } from "../utils/LayoutCalc";
@@ -41,7 +41,7 @@ const SVGCase: React.FunctionComponent<Props> = props => {
         getAbsoluteValue( props.canvasWidth, CASE_HEADER_LABEL_SIZE ) ).length;
     } ).reduce( ( sum, current ) => sum + current, 0 );
 
-  const caseHeaderHeight = (caseHeaderLabelRows <= 1 ? 2 : caseHeaderLabelRows) * getAbsoluteValue( props.canvasWidth,
+  const caseHeaderHeight = (caseHeaderLabelRows <= 1 ? 2 : caseHeaderLabelRows * TEXT_SPACING) * getAbsoluteValue( props.canvasWidth,
     CASE_HEADER_HEIGHT );
 
   const iconX = (!props.isPreview ? 0 : props.x) + props.canvasWidth * 0.005;

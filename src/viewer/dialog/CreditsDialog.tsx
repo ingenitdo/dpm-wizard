@@ -65,7 +65,7 @@ const CreditsDialog: React.FunctionComponent<Props> = props => {
           <div css={theme => ([{
             width: '50%'
           }])}>
-            <a href={"https://zentrum-digitalisierung.bayern/"} target={"_blank"}>
+            <a href={"https://www.bayern-innovativ.de/netzwerke-und-thinknet/uebersicht-digitalisierung/verbraucherbelange"} target={"_blank"}>
               <img alt={"Zentrum Digitalisierung.Bayern"} width={"100%"} src={"img/zdb_logo.jpg"}/>
             </a>
           </div>
@@ -99,10 +99,11 @@ const CreditsDialog: React.FunctionComponent<Props> = props => {
               </h2>
             <div css={theme => ([{
               display: 'flex',
+              alignItems: "center",
               flexDirection: 'row'
             }])}>
               <a style={{width:"50%"}} href={"https://www.concern.de/"} target={"_blank"}>
-                <img alt={"concern"} width={'70%'} src={"img/concern.png"}/>
+                <img alt={"concern"} width={'70%'} src={"img/concern_logo.png"}/>
               </a>
               <a style={{width:"50%"}} href={"https://www.ingenit.com/"} target={"_blank"}>
                 <img alt={"ingenit"} width={'70%'} src={"img/ingenit.png"}/>
@@ -138,7 +139,7 @@ const CreditsDialog: React.FunctionComponent<Props> = props => {
             alignItems: 'center',
             borderTop: '1px solid'
           }])}>
-            <a href={"https://github.com/ingenitdo/dpm"} target={"_blank"}>
+            <a href={"https://github.com/ingenitdo/dpm-wizard"} target={"_blank"}>
               <img alt={"github DPM repository"} width={'100%'} src={"img/github.png"}/>
             </a>
 

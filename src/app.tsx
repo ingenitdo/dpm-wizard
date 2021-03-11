@@ -82,7 +82,7 @@ const App: React.FC<Props> = props => {
     return checkedModel;
   };
 
-  const handleUploadModel = ( uploadedModel: Model ) => {
+  const handleModel = ( uploadedModel: Model ) => {
     const checkedModel = checkHealthModel( uploadedModel );
     setSimpleModel( checkedModel );
     setDetailedModel( checkedModel );
@@ -122,9 +122,10 @@ const App: React.FC<Props> = props => {
                 <DashboardPage pathname={hashHistory.location.pathname}
                                activeLanguage={activeLanguage}
                                onCreateNewModel={handleCreateNewModel}
-                               onUploadFile={( uploadedModel: Model ) => {
-                                 handleUploadModel( uploadedModel );
+                               onFile={( model: Model ) => {
+                                 handleModel( model );
                                }}
+
                 />
               </Route>
             </Switch>

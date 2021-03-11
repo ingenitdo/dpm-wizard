@@ -2,6 +2,7 @@ import * as React from "react";
 import { getStringArrayByWidth } from "../utils/Processing";
 import { getAbsoluteValue } from "../utils/LayoutCalc";
 import { Colors } from "../../entities/Colors";
+import { TEXT_SPACING } from "../Constants";
 
 export type TextOverflow = 'ellipsis';
 export type FontWeight = 'normal' | 'bolder'  | 'bold' | number;
@@ -60,9 +61,9 @@ const SVGText: React.FunctionComponent<Props> = props => {
                 rowsBefore += strArray[c].length;
               }
               const newy = props.y
-                + (rowsBefore + j) * getAbsoluteValue( props.canvasWidth, props.textSize )
+                + (rowsBefore + j) * getAbsoluteValue( props.canvasWidth, props.textSize) * TEXT_SPACING
                 + props.height/2
-                - (rowCount * getAbsoluteValue( props.canvasWidth, props.textSize ))/2;
+                - (rowCount * getAbsoluteValue( props.canvasWidth, props.textSize ) * TEXT_SPACING)/2;
 
               return (
                 <tspan key={Math.random()}

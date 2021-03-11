@@ -54,7 +54,7 @@ Um das Modell in eine Webseite zu integrieren, wird ein div mit dem Attribut `dp
 Hier muss auch der Pfad zur JSON-Datei des Modells angegeben werden.
 Die Breite und Höhe des Divs ist standardmäßig auf 100% eingestellt, die Höhe kann jeodch je nach Bedarf angepasst werden.
 ```xhtml
-<div dpm-viewer data-detailed-model-url="<path-to-mode-json>" canvasHeight="100%"/>
+<div dpm-viewer class="dpm-viewer" data-detailed-model-url="<path-to-mode-json>" canvasHeight="100%"/>
 ```
 
 
@@ -112,6 +112,6 @@ To integrate the model into a web page, a div with the attribute `dpm-viewer` is
 The path to the JSON file of the model must also be specified here.
 The width and height of the div is set to 100% by default, but the height can be adjusted as needed.
 ```xhtml
-<div dpm-viewer data-detailed-model-url="<path-to-mode-json>" canvasHeight="100%"/>
+<div dpm-viewer class="dpm-viewer" data-detailed-model-url="<path-to-mode-json>" canvasHeight="100%"/>
 ```
 

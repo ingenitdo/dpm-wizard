@@ -50,15 +50,20 @@ const Header: React.FC<Props> = props => {
         height: "100%",
         alignItems: "center",
       }])}>
+        <a href={"https://www.bayern-innovativ.de/netzwerke-und-thinknet/uebersicht-digitalisierung/verbraucherbelange"}
+           target={"_blank"}
+        >
+          <img src="img/bayern_innovativ_logo.png" css={theme => (
+            [
+              {
+                height: props.pathname === "/" ? "3.6vw" : "2vw",
+                transition: "height 0.5s ease-in-out"
+              }
+            ]
+          )} alt="ZDB Logo"
 
-        <img src="img/bayern_innovativ_logo.png" css={theme => (
-          [
-            {
-              height: props.pathname === "/" ? "3.6vw" : "2vw",
-              transition: "height 0.5s ease-in-out"
-            }
-          ]
-        )} alt="ZDB Logo"/>
+          />
+        </a>
         <div css={theme => ([{
           height: props.pathname === "/" ? "102px" : "32px",
           width: "1px",

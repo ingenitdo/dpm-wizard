@@ -49,38 +49,38 @@ const Controls: React.FunctionComponent<Props> = props => {
         minHeight: props.height
       }])}>
 
-        {props.showModeToggle && (
-          <div id={"btn-mode"}
-               css={theme => ([{
-                 width: '25%',
-                 marginRight: '47%',
-                 border: 'none',
-                 backgroundColor: props.colors.controlsBackground,
-                 color: 'white',
-                 fontSize: props.labelSize,
-                 outline: 'none',
-                 transition: 'background-color 0.3s ease-in-out',
-                 display: 'flex',
-                 justifyContent: 'center',
-                 alignItems: 'center',
-                 ':hover': {
-                   backgroundColor: props.colors.controlsBackgroundHover,
-                   cursor: 'pointer'
-                 },
-                 ':focus': {
-                   outline: 'none'
-                 }
-               }, drop_shadow])}
-               onClick={props.toggleMode}
-          >
-            {props.showDetailedModel ?
-              (props.fixedLabels.simpleModel || props.language.simpleModel) :
-              (props.fixedLabels.detailedModel || props.language.detailedModel)}
-          </div>
-        )}
-        {!props.showModeToggle && (
+        {/*{props.showModeToggle && (*/}
+        {/*  <div id={"btn-mode"}*/}
+        {/*       css={theme => ([{*/}
+        {/*         width: '25%',*/}
+        {/*         marginRight: '47%',*/}
+        {/*         border: 'none',*/}
+        {/*         backgroundColor: props.colors.controlsBackground,*/}
+        {/*         color: 'white',*/}
+        {/*         fontSize: props.labelSize,*/}
+        {/*         outline: 'none',*/}
+        {/*         transition: 'background-color 0.3s ease-in-out',*/}
+        {/*         display: 'flex',*/}
+        {/*         justifyContent: 'center',*/}
+        {/*         alignItems: 'center',*/}
+        {/*         ':hover': {*/}
+        {/*           backgroundColor: props.colors.controlsBackgroundHover,*/}
+        {/*           cursor: 'pointer'*/}
+        {/*         },*/}
+        {/*         ':focus': {*/}
+        {/*           outline: 'none'*/}
+        {/*         }*/}
+        {/*       }, drop_shadow])}*/}
+        {/*       onClick={props.toggleMode}*/}
+        {/*  >*/}
+        {/*    {props.showDetailedModel ?*/}
+        {/*      (props.fixedLabels.simpleModel || props.language.simpleModel) :*/}
+        {/*      (props.fixedLabels.detailedModel || props.language.detailedModel)}*/}
+        {/*  </div>*/}
+        {/*)}*/}
+        {/*{!props.showModeToggle && (*/}
           <div css={theme => ([{width: "25%", marginRight: "47%"}])}/>
-        )}
+{/*        )}*/}
 
         {props.showLegend && (
           <div id={"btn-legend"}

@@ -69,7 +69,7 @@ const TabConnection: React.FC<Props> = props => {
                     #{index + 1}
                   </TypoHeadline>
 
-                  <div>
+                  <InputColorContainer>
                     <TextInput label={"Titel"} value={connectionType.title || ""} onUpdate={( value ) => {
                       props.onUpdateTempModel( ( draft ) => {
                         const conType = draft.connectionTypes.find( cT => cT.id === connectionType.id );
@@ -77,7 +77,14 @@ const TabConnection: React.FC<Props> = props => {
                       } )
                     }}
                     />
-                  </div>
+                    <TextInput label={"Beschreibung (Legende)"} value={connectionType.legendLabel || ""} onUpdate={( value ) => {
+                      props.onUpdateTempModel( ( draft ) => {
+                        const conType = draft.connectionTypes.find( cT => cT.id === connectionType.id );
+                        conType.legendLabel = value;
+                      } )
+                    }}
+                    />
+                  </InputColorContainer>
                   <div>
 
                     <InputColorContainer>

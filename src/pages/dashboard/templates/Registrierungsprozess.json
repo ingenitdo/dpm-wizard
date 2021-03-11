@@ -1,0 +1,745 @@
+{
+  "version": "1.1.0",
+  "masterData": {
+    "title": "Daten Prozess",
+    "author": "",
+    "version": "1.0",
+    "description": "",
+    "viewerMode": "both",
+    "controlOptions": {
+      "showTitle": true,
+      "showSubTitle": true,
+      "showModeToggle": false,
+      "showLegend": true,
+      "showFullscreen": true,
+      "showZoom": true,
+      "showTutorial": true
+    }
+  },
+  "language": "de",
+  "title": "Beispiel Registrierungsprozess (mit Kauf und Registierungsschlüssel, exemplarische Darstellung von Sicherheitsinformationen) ",
+  "subtitle": "",
+  "header": {
+    "sourceLabel": "Datenkategorie",
+    "sourceIcon": {
+      "id": "database_solid",
+      "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzcxLjAwNSAzNzEuMDA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNzEuMDA1IDM3MS4wMDU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjgxLjAxNiwxNC4yNDFDMjU1LjYyNyw1LjA1OCwyMjEuNzAzLDAsMTg1LjUwMywwUzExNS4zNzksNS4wNjEsODkuOTksMTQuMjQ4Yy0yMi4xNzQsOC4wMjYtMzUuNDEyLDE4LjUtMzUuNDEyLDI4LjAyOQ0KCQkJYzAsOS41MjksMTMuMjM4LDIwLjAwMSwzNS40MTMsMjguMDIzaDBjMjUuMzg4LDkuMTg4LDU5LjMwOSwxNC4yNDksOTUuNTEyLDE0LjI0OXM3MC4xMjQtNS4wNjEsOTUuNTEzLTE0LjI0OQ0KCQkJYzIyLjE3NC04LjAyNiwzNS40MTItMTguNSwzNS40MTItMjguMDNDMzE2LjQyOCwzMi43NCwzMDMuMTksMjIuMjcsMjgxLjAxNiwxNC4yNDF6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0xODUuNTAzLDI5MS4wNzhjLTUxLjMxNCwwLTEwNS0xMC42MDItMTMxLTMwLjY4NHY2OC4zMzJjMCw5LjUzMiwxMy4yODMsMjAuMDEyLDM1LjQ1NCwyOC4wMzUNCgkJCWMyNS4zODIsOS4xODQsNTkuMzUxLDE0LjI0Miw5NS41NjUsMTQuMjQyYzIxLjMwNSwwLjA3OSw0Mi41NzEtMS44MjUsNjMuNTIzLTUuNjg2YzM5LjY5Ny03LjYxNyw2Ny40NTgtMjIuNjYzLDY3LjQ1OC0zNi41OTENCgkJCXYtNjguMzMyQzI5MC41MDMsMjgwLjQ3NiwyMzYuODE3LDI5MS4wNzgsMTg1LjUwMywyOTEuMDc4eiBNMjA4LjUwMywzMzcuNWgtNDZjLTQuNDE4LDAtOC0zLjU4Mi04LThzMy41ODItOCw4LThoNDYNCgkJCWM0LjQxOCwwLDgsMy41ODIsOCw4UzIxMi45MjEsMzM3LjUsMjA4LjUwMywzMzcuNXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTE4NS41MDMsMTk1LjgxNGMtNTEuMzE0LDAtMTA1LTEwLjYwMS0xMzEtMzAuNjgzVjIzMi44YzAsOS41MzIsMTMuMjgzLDIwLjAxMiwzNS40NTQsMjguMDM1DQoJCQljMjUuMzgyLDkuMTg1LDU5LjM1MSwxNC4yNDIsOTUuNTY1LDE0LjI0MnM3MC4xNTQtNS4wNTcsOTUuNTM2LTE0LjI0MmMyMi4xNzEtOC4wMjIsMzUuNDQ1LTE4LjUwMiwzNS40NDUtMjguMDM1di02Ny42Nw0KCQkJQzI5MC41MDMsMTg1LjIxMiwyMzYuODE3LDE5NS44MTQsMTg1LjUwMywxOTUuODE0eiBNMjA4LjUwMywyNDAuNWgtNDZjLTQuNDE4LDAtOC0zLjU4Mi04LThzMy41ODItOCw4LThoNDZjNC40MTgsMCw4LDMuNTgyLDgsOA0KCQkJUzIxMi45MjEsMjQwLjUsMjA4LjUwMywyNDAuNXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTE4NS41MDMsMTAwLjU1M2MtNTEuMzE0LDAtMTA1LTEwLjYwMy0xMzEtMzAuNjg1djY3LjY3YzAsOS41MzIsMTMuMjgzLDIwLjAxMywzNS40NTQsMjguMDM1DQoJCQljMjUuMzgyLDkuMTg1LDU5LjM1MSwxNC4yNDIsOTUuNTY1LDE0LjI0MnM3MC4xNTQtNS4wNTcsOTUuNTM2LTE0LjI0MmMyMi4xNzEtOC4wMjIsMzUuNDQ1LTE4LjUwMywzNS40NDUtMjguMDM1di02Ny42Nw0KCQkJQzI5MC41MDMsODkuOTUsMjM2LjgxNywxMDAuNTUzLDE4NS41MDMsMTAwLjU1M3ogTTIwOC41MDMsMTQ2LjVoLTQ2Yy00LjQxOCwwLTgtMy41ODItOC04czMuNTgyLTgsOC04aDQ2YzQuNDE4LDAsOCwzLjU4Miw4LDgNCgkJCVMyMTIuOTIxLDE0Ni41LDIwOC41MDMsMTQ2LjV6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
+    },
+    "purposeLabel": "Verwendungszweck",
+    "purposeIcon": {
+      "id": "c567ca64-3a9a-4045-b264-19facc9f6408",
+      "dataUri": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiAgdmlld0JveD0iMCAwIDk2IDk2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iSWNvbnNfQnVsbHNleWUiIG92ZXJmbG93PSJoaWRkZW4iPjxwYXRoIGQ9Ik03OC41IDE3LjUgNzcuNSA4LjUgNjYuNSAxOS41IDY3LjEgMjQuNyA1MS4xIDQwLjdDNDkuNyA0MCA0OC4xIDM5LjUgNDYuNCAzOS41IDQwLjkgMzkuNSAzNi40IDQ0IDM2LjQgNDkuNSAzNi40IDU1IDQwLjkgNTkuNSA0Ni40IDU5LjUgNTEuOSA1OS41IDU2LjQgNTUgNTYuNCA0OS41IDU2LjQgNDcuOCA1NiA0Ni4zIDU1LjMgNDQuOUw3MS4zIDI4LjkgNzYuNSAyOS41IDg3LjUgMTguNSA3OC41IDE3LjVaIi8+PHBhdGggZD0iTTc5LjMgMzIuMyA3OCAzMy43IDc2LjEgMzMuNSA3NCAzMy4yQzc2LjggMzggNzguNSA0My41IDc4LjUgNDkuNSA3OC41IDY3LjEgNjQuMSA4MS41IDQ2LjUgODEuNSAyOC45IDgxLjUgMTQuNSA2Ny4xIDE0LjUgNDkuNSAxNC41IDMxLjkgMjguOSAxNy41IDQ2LjUgMTcuNSA1Mi40IDE3LjUgNTggMTkuMSA2Mi44IDIyTDYyLjYgMjAgNjIuMyAxOCA2My43IDE2LjYgNjQuNCAxNS45QzU5IDEzLjEgNTMgMTEuNSA0Ni41IDExLjUgMjUuNSAxMS41IDguNSAyOC41IDguNSA0OS41IDguNSA3MC41IDI1LjUgODcuNSA0Ni41IDg3LjUgNjcuNSA4Ny41IDg0LjUgNzAuNSA4NC41IDQ5LjUgODQuNSA0MyA4Mi45IDM3IDgwIDMxLjdMNzkuMyAzMi4zWiIvPjxwYXRoIGQ9Ik02My4yIDQyLjdDNjQuMSA0NC44IDY0LjUgNDcuMSA2NC41IDQ5LjUgNjQuNSA1OS40IDU2LjQgNjcuNSA0Ni41IDY3LjUgMzYuNiA2Ny41IDI4LjUgNTkuNCAyOC41IDQ5LjUgMjguNSAzOS42IDM2LjYgMzEuNSA0Ni41IDMxLjUgNDguOSAzMS41IDUxLjIgMzIgNTMuMyAzMi44TDU3LjggMjguM0M1NC40IDI2LjUgNTAuNiAyNS41IDQ2LjUgMjUuNSAzMy4zIDI1LjUgMjIuNSAzNi4zIDIyLjUgNDkuNSAyMi41IDYyLjcgMzMuMyA3My41IDQ2LjUgNzMuNSA1OS43IDczLjUgNzAuNSA2Mi43IDcwLjUgNDkuNSA3MC41IDQ1LjQgNjkuNSA0MS42IDY3LjcgMzguMkw2My4yIDQyLjdaIi8+PC9zdmc+"
+    }
+  },
+  "participants": [
+    {
+      "id": "1",
+      "label": [
+        "App-Nutzer:in"
+      ],
+      "labelSize": 1.3,
+      "hasActionLabel": "Die Akteure in der Überschrift dieser Spalte verarbeiten Daten",
+      "hasNoActionLabel": "Die Akteure in der Überschrift dieser Spalte verarbeiten keine Daten",
+      "backgroundColor": "#ffffff",
+      "labelColor": "#48AAE6",
+      "iconColor": "#006ba2",
+      "borderColor": "#48AAE6",
+      "borderSize": 2,
+      "icon": {
+        "id": "man_user",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDM1MCAzNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM1MCAzNTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik0xNzUsMTcxLjE3M2MzOC45MTQsMCw3MC40NjMtMzguMzE4LDcwLjQ2My04NS41ODZDMjQ1LjQ2MywzOC4zMTgsMjM1LjEwNSwwLDE3NSwwcy03MC40NjUsMzguMzE4LTcwLjQ2NSw4NS41ODcNCgkJQzEwNC41MzUsMTMyLjg1NSwxMzYuMDg0LDE3MS4xNzMsMTc1LDE3MS4xNzN6Ii8+DQoJPHBhdGggZD0iTTQxLjkwOSwzMDEuODUzQzQxLjg5NywyOTguOTcxLDQxLjg4NSwzMDEuMDQxLDQxLjkwOSwzMDEuODUzTDQxLjkwOSwzMDEuODUzeiIvPg0KCTxwYXRoIGQ9Ik0zMDguMDg1LDMwNC4xMDRDMzA4LjEyMywzMDMuMzE1LDMwOC4wOTgsMjk4LjYzLDMwOC4wODUsMzA0LjEwNEwzMDguMDg1LDMwNC4xMDR6Ii8+DQoJPHBhdGggZD0iTTMwNy45MzUsMjk4LjM5N2MtMS4zMDUtODIuMzQyLTEyLjA1OS0xMDUuODA1LTk0LjM1Mi0xMjAuNjU3YzAsMC0xMS41ODQsMTQuNzYxLTM4LjU4NCwxNC43NjENCgkJcy0zOC41ODYtMTQuNzYxLTM4LjU4Ni0xNC43NjFjLTgxLjM5NSwxNC42OS05Mi44MDMsMzcuODA1LTk0LjMwMywxMTcuOTgyYy0wLjEyMyw2LjU0Ny0wLjE4LDYuODkxLTAuMjAyLDYuMTMxDQoJCWMwLjAwNSwxLjQyNCwwLjAxMSw0LjA1OCwwLjAxMSw4LjY1MWMwLDAsMTkuNTkyLDM5LjQ5NiwxMzMuMDgsMzkuNDk2YzExMy40ODYsMCwxMzMuMDgtMzkuNDk2LDEzMy4wOC0zOS40OTYNCgkJYzAtMi45NTEsMC4wMDItNS4wMDMsMC4wMDUtNi4zOTlDMzA4LjA2MiwzMDQuNTc1LDMwOC4wMTgsMzAzLjY2NCwzMDcuOTM1LDI5OC4zOTd6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+      },
+      "itemSymbols": []
+    },
+    {
+      "id": "2",
+      "label": [
+        "App-Anbieter:in"
+      ],
+      "labelSize": 1.3,
+      "hasActionLabel": "Die Akteure in der Überschrift dieser Spalte verarbeiten Daten",
+      "hasNoActionLabel": "Die Akteure in der Überschrift dieser Spalte verarbeiten keine Daten",
+      "backgroundColor": "#ffffff",
+      "labelColor": "#48AAE6",
+      "iconColor": "#006ba2",
+      "borderColor": "#48AAE6",
+      "borderSize": 2,
+      "icon": {
+        "id": "44355f0a-5c56-415c-982f-8ba18dc69ce1",
+        "dataUri": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiAgd2lkdGg9IjExOSIgaGVpZ2h0PSIxMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9Ijk3IiB5PSI2NTMiIHdpZHRoPSIxMTkiIGhlaWdodD0iMTEyIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCB4PSIwIiB5PSI5LjMxMzIzZS0xMCIgd2lkdGg9IjEuMTMzNDhlKzA2IiBoZWlnaHQ9IjEuMDY2OGUrMDYiLz48L2NsaXBQYXRoPjxpbWFnZSB3aWR0aD0iMTI1IiBoZWlnaHQ9IjEwNCIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9qcGVnO2Jhc2U2NCwvOWovNEFBUVNrWkpSZ0FCQVFFQVlBQmdBQUQvMndCREFBTUNBZ01DQWdNREF3TUVBd01FQlFnRkJRUUVCUW9IQndZSURBb01EQXNLQ3dzTkRoSVFEUTRSRGdzTEVCWVFFUk1VRlJVVkRBOFhHQllVR0JJVUZSVC8yd0JEQVFNRUJBVUVCUWtGQlFrVURRc05GQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJUL3dBQVJDQUJvQUgwREFTSUFBaEVCQXhFQi84UUFId0FBQVFVQkFRRUJBUUVBQUFBQUFBQUFBQUVDQXdRRkJnY0lDUW9MLzhRQXRSQUFBZ0VEQXdJRUF3VUZCQVFBQUFGOUFRSURBQVFSQlJJaE1VRUdFMUZoQnlKeEZES0JrYUVJSTBLeHdSVlMwZkFrTTJKeWdna0tGaGNZR1JvbEppY29LU28wTlRZM09EazZRMFJGUmtkSVNVcFRWRlZXVjFoWldtTmtaV1puYUdscWMzUjFkbmQ0ZVhxRGhJV0doNGlKaXBLVGxKV1dsNWlabXFLanBLV21wNmlwcXJLenRMVzJ0N2k1dXNMRHhNWEd4OGpKeXRMVDFOWFcxOWpaMnVIaTQrVGw1dWZvNmVyeDh2UDA5ZmIzK1BuNi84UUFId0VBQXdFQkFRRUJBUUVCQVFBQUFBQUFBQUVDQXdRRkJnY0lDUW9MLzhRQXRSRUFBZ0VDQkFRREJBY0ZCQVFBQVFKM0FBRUNBeEVFQlNFeEJoSkJVUWRoY1JNaU1vRUlGRUtSb2JIQkNTTXpVdkFWWW5MUkNoWWtOT0VsOFJjWUdSb21KeWdwS2pVMk56ZzVPa05FUlVaSFNFbEtVMVJWVmxkWVdWcGpaR1ZtWjJocGFuTjBkWFozZUhsNmdvT0VoWWFIaUltS2twT1VsWmFYbUptYW9xT2twYWFucUttcXNyTzB0YmEzdUxtNndzUEV4Y2JIeU1uSzB0UFUxZGJYMk5uYTR1UGs1ZWJuNk9ucTh2UDA5ZmIzK1BuNi85b0FEQU1CQUFJUkF4RUFQd0Q5VTZLS0tBQ2lpaWdBb3ByU0ttTWtESndNbnJUcUFLVnplR1BjVk1TSXZEU1RQdEFPT1ByK2xaay9pSzBoL3dCWnFVS2tZK1dKQzM2K2gveWFwZVB0MFBoblZwRis5R2l6RGpIQ2tidnJ4WHpEOFJ2aXRkZUZmQzE3cU5sYi9icnVJWlNBbkFPT1dKUFlCUXgvQ3Z6YmlIUDh3eTNGd3d1RnB4Zk1yM2xmZTdYUnJ0M1BwY3R5bjYvVGRSUFoyUHFHUHhERGZRM1pzSjdxNHViZUV5aEFpa3VBYzdRdkdTZW40OWE2T3h1dnRscEROOG43eEEzN3Q5NjhqczNjZTlmSVg3SnZ4STF2eFZyRUZ2NGdsZDVMdU9TRm83bTNXTnptUGVDR1JzTXBBNCtWVHorSitxL0NMdTJnMnF2eTBZTVpJajh0ZmxKWDVWNmhlTURQT0FNMTd2RCtPeE9Ob09XS2FjMDJuYmJTei9Kbk5tbUIrbzFGRHlUKysvOEFrYk5GRkZmV0hoaFJSUlFBVVVVVUFGWUhpTHhNTkJWblpBVUJVRGpPU2MrNHdPSzM2OC8rTGdpaTBDYWVhWHlJRmFBeVNnWjJMNW9WbXgzd0hOZWZtRlN0U3dkYXBoM2FjWXRxL2RhblJoNmFyVjZkS1cwbWw5K2hXMUx4anJWdmJ3WG01YmEzbTVpM3dnby90MXpWaTgrSTByYVZGTkZibU9kbE84WkdGWUhCQUo5L2FzVzM4WmFQcVBnVFQ1Rmhoc3J4b0xtWFRMZlVHTSs1WVFTWFBUc3B4bmdlL1N1WDhJNnAvd0FKQjRWTnd6NzVGbWNNU2VwWTUvb2E4WElzUmlaNHAwc1RYOXFwUVVscEZXZnUzV2lqdnpKcE5iV2ZVNnN5d01zUFE5ckdEamFUaTlmVzNWL3l0YVBlNUg0azhRWDkxZE5QTE41alcwZ2xUcndVTzdQUDByNkR0NTF1b0k1VU9Va1VPcDlpTWl2bmpWWVI1eXN3K1IxR1IraC9rYTlxK0g5MDE1NE4wcG41a2poRUxmVk1vZjhBMEd2dmNWSDNJeVI4cmdwV3FUaStwSjRxMDQ2cHBOL1pMOSs4dEpvRjU3bFRnL21hK1Q3WDRHL0VQV1lXOC9TSXJHMllFTTEvY3hxdU1jNVVFbkdQVVY5a1hGdXQxR1Vjc0YvMkdLbjh3UWF4bDhNNk5OSzhja2NkM050a0RMUElaR3hJUVh5Q2UvQTZkQUIwNHI0ck1zbW81bFVqT3F2aDg3Zm96NzdLczhyWlRUbkNsRlBtdHVyMnQyMVg2bnpWNEIvWi93REVQaFg0amFMcmQ1NHgwTzFzN0tXTUhUN0ZYbmxsRzNjRUxZWGFOdVRuQndDVG5CcjZWOEl1SjdXOHVZMWI3TGMzTFRRU1NidDhpTUFkeDNBY2RsR09GQXJXaXNZSUdMUnd4eHN6RnlWUUFsaU1FL1hBQXo3VllydHdXWDBzQ3VXa3JJNE1mbWRmTVo4OWQzZnlWdnVDdmw3eEY0TmgrTDN4TDhhMzkzYTJXc1FhWGR4NmRhUjNZTGlLT09ETGhRUVFDWjFuQjlUdDlPUHBqVWRRdHRKc2JpOXZKNDdhMXQ0MmxsbW1jSWlLQmtzekhnQUR1YS9QcndoKzIxOE12QS85b3NQRjlnbXA2cE8xM2VpUlpTaXpNMGpNRllMdHdHbFk5U0RnYzE0L0VrcjRhRktVWnVNcGErelR1a2szMDIxc1hsY0l5cXlrM0ZOTFRtdFp1NjcrVnoxS1Q5bG53MWVhemJhcU5Mc1ErNUVqTUY3Y3Bhc1N5cXVZVklqYkprWHFoelVmaXJ3WEQ0RHVQQzloYVF4NlhlNnhyTmphd0N5bGRIVVBQRXpuakdQbExEajBOY1BiZnR6ZUJYMDdUTEt5OFdlSC9Jc1pJWkVWcnNSNy9MSklEYmlPcEl6OUJWanczOFlMVDQ4L0gzNFlSMmVwNmZxbjJYVVRPNjZmZEpNRlNHMXVKTjdiU2NaY2puM0E5SytBd05DTlhGNGRSbFdVbEtHa25PMWs3dGE5T2k5VDZ2RVlPVU1QVnF2MmZLbExibHYyVzNVKzc2V2twYS9iRDg2Q3VlOGIrRTA4WmFEZDZWSktZSTdtSXhOSXVOeThnZ2pQb1JYUTBtYW1VVk9MaEpYVDBmekxoT1ZPYW5CMmFhYTlWcWp4bTQvWjJzMncvbW0vdUZqRWF6Mzl6SVNGQXdGQ29GVlZ4eGdEQUZYZkEvd3B2UERhM3RwTkZicFp5TUpJMWd1R1lGditCTGtjWjRyMXFpczZOQ2hoOWFOT01YM1NWL3YzTk1SaWNUaTlLOVdVbDJiZHZ1Mk9PaCtITnF6SzA4dTBMeXF3SUFSbnR1YkpQNFlycGRMMHEyMGEwRnRhUitYQ0NXMjdpM0pPU2NrK3RYS0s2cFZKU1ZtempqU2hCM2l0VDh1LytDazM3Wm5pYXo4ZVh2d3A4RmFyY2FGcDJteG9OWXZyS1F4ejNVem9IOGtPT1ZqVldVSEdOeExBOERuODlkTzFyVWRIMVNQVTdEVUxteTFHTi9NUzd0NW1qbVZ2N3djSElQdm12b1gvQUlLRi9EM1UvQWY3VlhqR2E5Z2tXejF5WmRWc2JoeDhzMGNpamRnLzdMaDEvd0NBMTgzZmxYNmZsOUdsVHdzUFpyUnBYOHprbTI1TzUrdm4vQk5uOXJ6V2ZqbG9lcStDdkdkMGIveFRvVUMzTnZxVW4rc3ZiUXR0Sms3RjBZcUMzVmc2NTVERS9iMWZsUDhBOEVnL0FPcTNYeE04WCtOUElhUFJiUFN6cGZuc3BDeVR5eXh5YlZQY3FzV1Q2Ymw5YS9WaXZoTTJwMDZXTGxHbHRwOTUxMDIzRlhQakw5c2I0Sy90RGZHcTZmVC9BQWpxZmhxSHdsRStZOUp1WjVZL3RPRGtOT1FQbUkvdS9kSG9ldGZKdmlqOWsvOEFhQjBHMzArM2k4RkxxVng1V0xxZXhkSm96SmsvZCtiS3BqamtFbko2WnhYNi93QmVmZURQakxvM2p6NG4rTlBCK2pPdDQvaE9PMVhVYnVOc290ek1aVDVBL3dCcEZqRzcwTFk2cWE4eUtjazJsdHVWYnpQeUoxNzRPL0ZUdy9xanczWHdjMTJhelZWSDIyNHQwRHMyQnZJUkF3QXoweVNjQUd2dFgvZ25yOEhkYzAyKzFYeHI0ZzBXNjhQUnh3blQ5T3NycU14TzdPUTAwcFhqajVWVWNmM3ErNHFLaTY2RHMrb1VVVVZKUjUxOGVQR1Y3NEQ4Q3JxbG1HQSszVzBFMHFBbnk0M2tDbGpqb3VTQVQyQlBUclhqazJyZVBJTmRrdkg4YXdSV3djNHNQc2d1SWZ3WUdOc2QrdGV6ZnRDZUQ3bng1OEVmR3VoMk83KzBMblM1bXM5dlg3UWkrWkNQKy9pTFh3cDRIK00xNzR3OEYybW94SXIrWGFReTNFekY5c1lZaEN6YlViQVU4RW5IVGpKT0srUjRqcDV4S2pUZVRUNVpYdExTTDBhMzk1YVd0K0o3T1Z4d1U2c2xqbmFOdDlmdTBQdkg0UDhBajQrTzlCdmZ0TFIvMnBwbDI5bmRyR0NCeGhvM3dTY2JvMlJ1cDZrWjRydksrTnYyWWZGazJsZkZtNVM0dlZrdE5kV1RUblNFRHlUZFFBeVJPRzNrNWFMekI4eXFUOHZwWDJUWDBPQzl2OVdwL1d2NGxsemV2WGJ1ZWZpVlNqV21xRHZDK25vRmZOdjdSWDdlL3dBTXYyZUxxZlNicTZsOFMrS1l4aHRGMGNxN1F0NlR5RTdZdnB5M2ZiaXZNUDhBZ28xKzJmYy9CWFI0L0FIZ3U4OGp4cHFzSG1YZC9DZm4wMjFiSUcwOXBYNXdlcXFOM0JLbXZ5ejhLL0N6eDU4UzF1YjN3NTRSOFErS1ZWeVo3blRkTm51d0c2bmN5S2VmcWM4MTlwbDJVeHJROXZpWGFQUmJYUE9xVkxPMFQ2Qy9hYi9iNnVmMmx0RC9BTEgxSDRhZUdyV3poWm5zcnU2bHVMaStzMkl3V2ptUjRnQ2NESUtsVGdaVTRGZk1maHE2MG14MXkwdU5jMDY0MWZTNDMzVFdWcmRpMWVZZjNmTktQdEgvQUFIUDBxRFZ0SDFEdy9xVStuNnBZWEdtMzhEYlpiVzhoYUtXTStqS3dCQitvcW4rVmZiVWNQU29VL1owbGFQcXpsY25KM1orbjN3US93Q0NuWHdZK0hQZy9UL0RGdDhOOWM4R2FYYUx0anR0S2FHOWlVbnF6T3p4dTdFOGxpQ1QzcjFpWC9ncXQ4REk3Y3lyTjRoa2ZHZkpYUy9uK25MZ2ZyWDQyUXd5M1UwY01NVFRUU01GU09OU3pNVDBBQTZtdlJQQjM3Ti94VStJRndrV2dmRDN4RnFBYzRFdzA2U09FZldWd0VYOFdGZU5XeWZCWGM1dHI1LzVtcXF6MlI5aGZ0Q2Y4RllOVThXYUxkNkg4TGRFdWZETWR3cGpmWGRVWkRlS3BHRDVVU0VyRzMrMFdZalBBQndhK2xmK0NaUHdqMUQ0ZC9BR1R4QnJhU0pyUGpDOE9yTjUrZk4rejdRc0pjbmtsdm5rK2tvcnhIOWxuL2dsZmM2ZHJGajRtK01NMXJJbHV5elErRnJPUVNxN0E1SDJtVWZLVkg5eE1nOTJ4bFQrazhVU1F4ckhHcXBHb0NxcWpBQUhRQWVsZk81aFh3dE9sOVZ3YTAzYjcvUHFiUWpKdm1rWTNqVHhocDNnUHczZDYxcWtubDJ0dXVTQjFZOWxIdjhBeTVQUVY4K2FoOGZ2aUZxRm11cjJWcjRXOE42Wk92bTJkdDRodnZLdWJxUHFyQmY0UWV4YmJrWU5hUDdaZDd0MC93QUQyRjBkdWozbXJxdDRTY0xnRk9DZmRUSit0ZkxmaUxYdEM4VGZEL3hKckd0M0J1UEhONXE2dzI4TWhPNjF0VUFZN1Y2THVZN1Q3S1FNZDlNdndVS2xKVkpLOTMydmJXMy9BQTdQSnhtS2xDYmhGMnN2Ni80QjlzL0FINDdRZkdUVGRRaHViUmRNMS9UR0NYbG9qNzBJT1FIamJ1cElQYzl1VGtWNnpYeWwreW5ZUmF4OFZQRlBpVFJvMlh3N0ZwTm5wYVM3U0VrbVNPSlRqMU9JaXg5UE1HZXRmVnRlUmpxY0tWZHhwcXkwMDdYV3g2T0VxU3FVbEtlcjExN2hYNWpmRkw5amY0eGZETDRrZUlIK0cvaHlIeGQ0TDFXZWVleVNDOXQ3ZWF3U1ppNzI3TE02OEtTUUdYUHlnWklKSXI5T2FLNERzUGhmOW1iOWxmNHR3ZkVyUi9HbnhPdTdYU2JiUzVEY3g2YWwwTHUrdXB2S01hZWJJaEtCVkJIUm1KMjR4akJIMm40cThTMlBnM3d6cTJ2Nm5LSWRPMHUwbHZibVEvd3hSb1hZL2tEV3JYSC9BQmMrSGNQeForSDJxK0VicThsc0xEVmhIQmVTd2Y2eHJmekVhYU5UMkx4aGszZHQrY0hHS3VISzVKUzJBL05IOWx6OWxuVnYyMC9paHJ2eG8rSjhjMFhoQysxR1M0aXM5N0sycE9Hd0lVYmdpM2pVS2hZY25idEhSaVAxUDBMUWROOEw2UmE2VnBGaGJhWnBscWdpdDdPemlXS0tKUjBWVlVBQWZTazBEUWRQOExhTFk2UnBObkRwK21XTUtXOXRhMjY3WTRvMUFDcW85QUJXaFhiak1aUEZ6MTBpdGwyUkVZOHFQekQvQU9DeDBOb210ZkMrVklJbHZuZzFBU3pCUnZaQTBHMEU5U0FTMlBxYS9PSDhxK3d2K0NwSHhTZzhlL3RKTm9salA1MWw0VnNFMDE5ckFwOXBZbVNiSHVOeUlmZU1qdFh6Nyt6OThQVytLbnh1OEVlRlRhTmZXK3BhdGJ4M1VDNUdiWU9HbkpJNUFFYXVTUVJnQ3Z2c3VYc01EQno2Sy82bkhVMW03SEJRelNXODBjME1qUXpSc0hTU05pckt3T1FRUjBJTmZybC93VGsvYlF2UGpQcGt2dys4YTNuMm54anBjSG0yV29UTjgrbzJ5NEJEK3NxWkdUMVplVHlHSitPdjI1djJJN2o5bVhWb1BFSGg2YWJVdkFPcHpHR0dTYzdwckNZZ3NJWkQvRUNBU3I5OEVIa1pieVQ5bFR4VmUrRFAya3ZodHFkaElZNXY3ZHRiWnR2OFVjMGdpa1UreFNSaCtOWjRxblF6UENPY05kTHA5bi9XNFJicHlzeitnV2lpaXZ6VTd6aWZqQjhMZE8rTUhncTUwRFVKR3RtWmhOYlhjWXkxdk11ZHJnZHhna0Vkd1QwNjE0VHBQd0grS3VpdExhUXcrQWJpV1JXaGZ4RFBaWnZKSTJHRHZQbFpaaVBVODkyUFd2cXlpdTJqaTZ0R0hzMVpyelZ6bHFZYUZXWE85SDVHRjRIOE95ZUUvQ2VsYVJOUERkVDJkdXNVazhGdUlFbFlEbGdnNEdUelc3UlJYSktUazNKOVRwaWxGSklLS0tLa1lVVkROY0NMdFdaZGE0WWM0RlVvdDdBYk5mUG43Wlg3Vm1rL3N4L0RlZTVTV0c1OFphbEcwV2phWVdCSmZHRFBJdjhBenpUcWY3eHdvNjVGWDQwL3ROYXI0Umh1Tkc4QitGNzd4MTR5WUZJN1d6alAyT3pZOEJycTQ0U1BIWFp1REgvWkIzVjhWLzhBREYvanY0MmVOcm54cDhiZkdYbDMxNHdhV3owdkUwNm9Pa1N1UjVjU3FPQUZEajh5YTluQjRLRGtxdUpkb3JwMWZ5N0dNcDlJbnhMcGVrZUpmaW40eSt6YWZhWDNpWHhMckZ5MGhqaFJwcDdpWjJMTXh4M0pKSko2Y2sxK3UzN0IzN0RjZjdPdW52NHM4VytUZWZFRy9nOHJ5NHlIaTB1RnVURWpkR2tiamU0NDQycnhrdHIvQUFnOEsrQVAyZjhBVEdzdkJuaDIzMHVXUlFrOSt3TXQzY1kvNTZTdGxpTTg3UmhSMkFyMHkzK0xUekhqSnIwOHd4MWJGUjlsU1hMRDhYL2tqT0VWSFY3a2Y3WkhndTI4ZmZzdy9FZlRMbVB6UEwwZWUvaTlWbHQxODlDUCtCUmo4Q2EvSUQ5aUQ0YjNmeE8vYWY4QUFsaEJHV3Q5UHYwMWU3a0M1RWNOdVJLU2ZUTEtpQStyaXYxKzhYK01KUEVQZ2Z4RHB4amFVWG1uWEZ2c1VaTGI0bVhHUHhyd2IvZ25qK3p5ZmdMNEd1UEVPdTJubCtNL0VLSVpvNUYrYXl0aHlrSHN4UHpQNzdSL0RXT0R4RHdtRHF3ZTcyK2FLbEhta2o3Z29yTXR0Vzg0RDVhMEk1QklNZ1Y4dzAwZEEraWlpa0FVVVVVQUZGRkZBREhoV1RxS3FUYVRETm5ORkZOTm9ETnVQQ052TjFyTm4rSGRyTjJXaWl0RlVrdG1LeUtqZkMyMGIrRmFXUDRYMmtaNFZhS0tyMjArNHVWRiszOEEyME9NQVZwMi9obUNIRkZGUTZrbnV4MlJmaDAyS0hvS3Nxb1hvS0tLaTR4MUZGRklBb29vb0EvLzJRPT0iIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIGlkPSJpbWcyIj48L2ltYWdlPjxjbGlwUGF0aCBpZD0iY2xpcDMiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxLjEzMzQ4ZSswNiIgaGVpZ2h0PSI5NDMwNTEiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDApIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTcgLTY1MykiPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMSkiIHRyYW5zZm9ybT0ibWF0cml4KDAuMDAwMTA0OTg3IDAgMCAwLjAwMDEwNDk4NyA5NyA2NTMpIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDMpIiB0cmFuc2Zvcm09InNjYWxlKDEgMS4xMzEyMikiPjx1c2Ugd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgeGxpbms6aHJlZj0iI2ltZzIiIHRyYW5zZm9ybT0ic2NhbGUoOTA2Ny44IDkwNjcuOCkiPjwvdXNlPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+      },
+      "itemSymbols": [
+        {
+          "customSymbolId": "36d95911-ef4d-4e0d-bfc3-552a64da660f",
+          "title": "Datenübertragung zwischen Ihrer App und unseren Servern",
+          "text": "Im Datenaustausch mit Ihren Geräten verwenden wir die TLS Verschlüsselung mit der jeweils besten, von Ihren Geräten unterstützten, Sicherheitsstufe. ... ."
+        }
+      ]
+    }
+  ],
+  "connectionTypes": [
+    {
+      "id": "ct1",
+      "title": "Allgemeine Prozessschritte",
+      "color": "#7D7D7D",
+      "textColor": "black",
+      "legend": true,
+      "legendOrder": 1,
+      "legendLabel": "Allgemeine Prozessschritte",
+      "default": true,
+      "labelSize": 1,
+      "strokeDasharray": "2,4"
+    },
+    {
+      "id": "dc1b686d-efb2-4576-9121-085372a043c7",
+      "color": "#008040",
+      "textColor": "#aaaaaa",
+      "colorInactive": "#aaaaaa",
+      "textColorInactive": "#aaaaaa",
+      "strokeDasharray": "8,0",
+      "legend": true,
+      "legendOrder": 2,
+      "legendLabel": "Verschlüsselte Datenübertragung, i.d.R. TLS",
+      "default": false,
+      "labelSize": 1,
+      "title": "Sichere Datenübertragung"
+    },
+    {
+      "id": "af24f082-1d83-4917-91b6-b0e4a1bade52",
+      "color": "#ccad88",
+      "textColor": "#aaaaaa",
+      "colorInactive": "#aaaaaa",
+      "textColorInactive": "#aaaaaa",
+      "strokeDasharray": "3,13",
+      "legend": true,
+      "legendOrder": 2,
+      "legendLabel": "",
+      "default": false,
+      "labelSize": 1,
+      "title": "Postweg"
+    }
+  ],
+  "boxTypes": [
+    {
+      "id": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+      "title": "Default",
+      "color": "#777777",
+      "textColor": "#ffffff",
+      "colorInactive": "#48AAE6",
+      "textColorInactive": "#ffffff",
+      "borderColor": "#ff00ff",
+      "borderWidth": 0,
+      "borderStrokeDasharray": "#ff00ff",
+      "legend": true,
+      "legendOrder": 0,
+      "legendLabel": "Prozessschritte",
+      "sourceDefault": true,
+      "purposeDefault": true,
+      "actionDefault": true,
+      "labelSize": 1.3,
+      "shortInfoLabelSize": 1,
+      "shortInfoBackground": "#FFA335",
+      "shortInfoActiveBackground": "#FF9134",
+      "infoIconBackground": "#FEE970",
+      "infoIconActiveBackground": "#feda0e",
+      "policyIconBackground": "#FEE970",
+      "policyIconActiveBackground": "#FEE970"
+    },
+    {
+      "id": "55c28565-7967-4131-867b-21c77e61f178",
+      "title": "Neue Box",
+      "color": "#005279",
+      "textColor": "#ffffff",
+      "colorInactive": "#006aa2",
+      "textColorInactive": "#ffffff",
+      "borderColor": "#ffffff",
+      "borderWidth": 0,
+      "borderStrokeDasharray": "#ffffff",
+      "legend": true,
+      "legendOrder": 0,
+      "legendLabel": "Datenkategorien und Verwendungszwecke",
+      "sourceDefault": true,
+      "purposeDefault": true,
+      "actionDefault": true,
+      "labelSize": 1.3,
+      "shortInfoLabelSize": 1,
+      "shortInfoBackground": "#ffa335",
+      "shortInfoActiveBackground": "#fb8a00",
+      "infoIconBackground": "#fee970",
+      "infoIconActiveBackground": "#feda10",
+      "policyIconBackground": "#666666",
+      "policyIconActiveBackground": "#666666"
+    },
+    {
+      "id": "2d0d73a4-140f-4948-82b1-689cdc3c0dc3",
+      "title": "Neue Box",
+      "color": "#5b5b5b",
+      "textColor": "#ffffff",
+      "colorInactive": "#808080",
+      "textColorInactive": "#ffffff",
+      "borderColor": "#ffffff",
+      "borderWidth": 0,
+      "borderStrokeDasharray": "#ffffff",
+      "legend": true,
+      "legendOrder": 0,
+      "legendLabel": "Daten bzw. Datenkategorien außerhalb unseres Einfluss- und Verantwortungsbereiches",
+      "sourceDefault": true,
+      "purposeDefault": true,
+      "actionDefault": true,
+      "labelSize": 1.3,
+      "shortInfoLabelSize": 1,
+      "shortInfoBackground": "#808080",
+      "shortInfoActiveBackground": "#ffffff",
+      "infoIconBackground": "#ff8040",
+      "infoIconActiveBackground": "#005fbd",
+      "policyIconBackground": "#666666",
+      "policyIconActiveBackground": "#666666"
+    }
+  ],
+  "cases": [
+    {
+      "id": "77188745-addb-4c6d-af43-62d35921a7a5",
+      "label": "Beispiel Registrierungsprozess",
+      "info": "",
+      "permissions": "",
+      "dataSources": [
+        {
+          "id": "5-dp1",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Kontakt- und Rechnungsdaten"
+          ],
+          "shortInfo": null,
+          "info": "<div><p>Info zu Datenkategorie</p></div>",
+          "position": {
+            "start": 0,
+            "end": 1
+          },
+          "itemSymbols": [
+            {
+              "customSymbolId": "b4a9c476-2d96-4f25-9354-a74b0901efde",
+              "title": " ",
+              "text": "<p><strong>Kontaktdaten</strong></p><ul><li>Name</li><li>Anschrift</li><li>...</li></ul><p><br></p><p><strong>Rechnungsdaten</strong></p><ul><li>Bankverbindung</li><li>...</li></ul>"
+            }
+          ]
+        },
+        {
+          "id": "7cb852ba-ac97-4e88-afd8-cc7349f17f27",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Sicherer Registrierungsschlüssel"
+          ],
+          "position": {
+            "start": 2,
+            "end": 2
+          },
+          "shortInfo": null,
+          "itemSymbols": [
+            {
+              "customSymbolId": "36d95911-ef4d-4e0d-bfc3-552a64da660f",
+              "title": " Eindeutiger Registrierungsschlüssel",
+              "text": "Der Registrierungsschlüssel ist eindeutig, d.h. er wird ausschließlich für Ihre persönliche Registrierung erstellt."
+            }
+          ]
+        },
+        {
+          "id": "9190790a-2ef4-4f30-98ac-8e94e22b312c",
+          "typeId": "2d0d73a4-140f-4948-82b1-689cdc3c0dc3",
+          "label": [
+            "Daten, die beim Download im App Store anfallen"
+          ],
+          "position": {
+            "start": 3,
+            "end": 3
+          },
+          "shortInfo": null,
+          "itemSymbols": [
+            {
+              "customSymbolId": "b4a9c476-2d96-4f25-9354-a74b0901efde",
+              "title": "Vom App Store erforderliche Informationen",
+              "text": "<ul><li>Nutzername</li><li>E-Mail-Adresse</li><li>Kundennummer Ihres Accounts</li><li>Zeitpunkt des Downloads</li><li>individuelle Gerätekennziffer</li><li>...</li></ul>"
+            },
+            {
+              "customSymbolId": "307e06a8-35ed-4238-856f-7e5c8b805925",
+              "title": "Externe Server",
+              "text": "<p>Wir haben keinen Einfluss auf die Erhebung und Verwendung dieser Daten. Die Verantwortung trägt der App Store-Anbieter.</p>"
+            }
+          ]
+        },
+        {
+          "id": "af64a606-21da-4006-9494-08416af2aece",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Ihre Account-Daten"
+          ],
+          "position": {
+            "start": 4,
+            "end": 4
+          },
+          "shortInfo": null,
+          "itemSymbols": [
+            {
+              "customSymbolId": "b4a9c476-2d96-4f25-9354-a74b0901efde",
+              "title": "Daten im Einzelnen",
+              "text": "<ul><li>Ihr Nutzername</li><li>Ihr Passwort oder PIN</li><li>...</li></ul>"
+            },
+            {
+              "customSymbolId": "36d95911-ef4d-4e0d-bfc3-552a64da660f",
+              "title": "Passwortsicherheit",
+              "text": "<p>In unserer Kommunikation werden sensible Daten verarbeitet - es ist uns ein wichtiges Anliegen, dass alle Prozesse maximal sicher sind. Dafür ist es wichtig, dass Sie ein sicheres Passwort verwenden. Empfehlungen sind:</p><p><br></p><ul><li>starke Passwörter wählen</li><li>zwölf oder mehr Zeichen (je wichtiger das Passwort, desto länger, sowohl Klein- als auch Großbuchstaben, Ziffern und Satzzeichen verwenden)</li><li>Passwörter niemals doppelt verwenden</li><li>Passwort-Safe zur Speicherung der Passwörter verwenden</li><li>Passwort nicht weitergeben und unverschlüsselt versenden</li><li>Standard-Passwörter bei Inbetriebnahme von Geräten sofort ändern</li><li>Siehe zum Beispiel auch <a href=\"https://www.eprivacy.eu/news/news-detail/news/toms-die-neue-passwortrichtlinie-ablaufende-kennwoerter-nicht-mehr-empfohlen\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.eprivacy.eu/news/news-detail/news/toms-die-neue-passwortrichtlinie-ablaufende-kennwoerter-nicht-mehr-empfohlen</a></li></ul><p><br></p>"
+            }
+          ]
+        }
+      ],
+      "dataPurposes": [
+        {
+          "id": "1-dp1",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Nutzung der digitalen Anwendung"
+          ],
+          "shortInfo": null,
+          "position": {
+            "start": 0,
+            "end": 0
+          },
+          "itemSymbols": []
+        },
+        {
+          "id": "db870771-8c57-4c5c-8cef-730b76a2bfe5",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Einrichtung Ihres Zugangs und Versand der Zugangsdaten an die angegebene Adresse"
+          ],
+          "position": {
+            "start": 1,
+            "end": 2
+          },
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "d441651e-fa87-4ff3-8428-131f7e7b7258",
+          "typeId": "55c28565-7967-4131-867b-21c77e61f178",
+          "label": [
+            "Direkter und sicherer Zugang zu den Leistungen der digitalen Anwendung"
+          ],
+          "position": {
+            "start": 3,
+            "end": 4
+          },
+          "shortInfo": null,
+          "itemSymbols": []
+        }
+      ],
+      "actions": [
+        {
+          "id": "1-a1",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Erwerb der Nutzungslizenz für die digitale Anwendung über die Website des App-Anbieters"
+          ],
+          "info": "<div><p>Prozessschritt Info</p></div>",
+          "erasurePolicy": "Dauerhaft gespeichert",
+          "storagePolicy": "Eigenes Smartphone",
+          "participantID": "1",
+          "position": {
+            "start": 0,
+            "end": 0
+          },
+          "itemSymbols": [],
+          "shortInfo": null
+        },
+        {
+          "id": "1-a2",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Kaufabwicklung "
+          ],
+          "info": "<div><p>Prozessschritt Info</p></div>",
+          "shortInfo": null,
+          "erasurePolicy": "14 Tage",
+          "storagePolicy": "Server",
+          "participantID": "2",
+          "position": {
+            "start": 0,
+            "end": 0
+          },
+          "itemSymbols": []
+        },
+        {
+          "id": "a075a343-f83e-4efa-ad69-56916f195560",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Anlage von Vertragsdaten und einer Versandadresse"
+          ],
+          "position": {
+            "start": 1,
+            "end": 1
+          },
+          "participantID": "2",
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "17af58c8-11e7-41e5-a210-d9b4914cd692",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Erstellung und Versand eines Registrierungsschlüssels"
+          ],
+          "position": {
+            "start": 2,
+            "end": 2
+          },
+          "participantID": "2",
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "ca79599f-3648-40ef-ab55-3fd96976c3b3",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Erhalt des Registrierungsschlüssels"
+          ],
+          "position": {
+            "start": 2,
+            "end": 2
+          },
+          "participantID": "1",
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "485d31c3-5bd4-4223-8403-b3bd9d9f7f2d",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Download der digitalen Anwendung auf Ihr Tablet oder Smartphone"
+          ],
+          "position": {
+            "start": 3,
+            "end": 3
+          },
+          "participantID": "1",
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "ebe53cc1-e4df-4094-b183-44f2c3975311",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Einrichten Ihres Nutzer:innen-Kontos"
+          ],
+          "position": {
+            "start": 4,
+            "end": 4
+          },
+          "participantID": "1",
+          "shortInfo": null,
+          "itemSymbols": []
+        },
+        {
+          "id": "090a546a-81b6-4adb-8f99-35ba8f205676",
+          "typeId": "5775ec66-2aa5-4e44-97cc-a6a558f81a21",
+          "label": [
+            "Anlegen Ihres Nutzer:innen-Kontos"
+          ],
+          "position": {
+            "start": 4,
+            "end": 4
+          },
+          "participantID": "2",
+          "shortInfo": null,
+          "itemSymbols": []
+        }
+      ],
+      "connections": [
+        {
+          "id": "f6224d98-6755-4f53-a336-d633fc06187b",
+          "typeId": "dc1b686d-efb2-4576-9121-085372a043c7",
+          "label": "",
+          "textEllipsis": false,
+          "source": "1-a1",
+          "destination": "1-a2",
+          "position": {
+            "start": 0,
+            "end": 0
+          }
+        },
+        {
+          "id": "59a67b64-a839-418e-bbd8-5cb191d46573",
+          "typeId": "ct1",
+          "label": "",
+          "textEllipsis": true,
+          "source": "1-a2",
+          "destination": "a075a343-f83e-4efa-ad69-56916f195560",
+          "position": {
+            "start": 0,
+            "end": 1
+          }
+        },
+        {
+          "id": "8ca03c66-0a18-49b1-b3b7-3c4d4f1880e3",
+          "typeId": "ct1",
+          "label": "",
+          "textEllipsis": true,
+          "source": "a075a343-f83e-4efa-ad69-56916f195560",
+          "destination": "17af58c8-11e7-41e5-a210-d9b4914cd692",
+          "position": {
+            "start": 1,
+            "end": 2
+          }
+        },
+        {
+          "id": "d423a50a-582b-4794-be00-742433139f17",
+          "typeId": "af24f082-1d83-4917-91b6-b0e4a1bade52",
+          "label": "Postweg",
+          "textEllipsis": false,
+          "source": "17af58c8-11e7-41e5-a210-d9b4914cd692",
+          "destination": "ca79599f-3648-40ef-ab55-3fd96976c3b3",
+          "position": {
+            "start": 2,
+            "end": 2
+          }
+        },
+        {
+          "id": "7cd810d9-e975-47ee-9f28-193331bd2a75",
+          "typeId": "ct1",
+          "label": "",
+          "textEllipsis": true,
+          "source": "ca79599f-3648-40ef-ab55-3fd96976c3b3",
+          "destination": "485d31c3-5bd4-4223-8403-b3bd9d9f7f2d",
+          "position": {
+            "start": 2,
+            "end": 3
+          }
+        },
+        {
+          "id": "5d977367-bf3e-4251-abea-92ba0c738230",
+          "typeId": "dc1b686d-efb2-4576-9121-085372a043c7",
+          "label": "Synchronisation Kontodaten",
+          "textEllipsis": true,
+          "source": "ebe53cc1-e4df-4094-b183-44f2c3975311",
+          "destination": "090a546a-81b6-4adb-8f99-35ba8f205676",
+          "position": {
+            "start": 4,
+            "end": 4
+          }
+        },
+        {
+          "id": "647f84af-08dd-4c31-8805-dabc26d0a7ae",
+          "typeId": "ct1",
+          "label": "",
+          "textEllipsis": true,
+          "source": "485d31c3-5bd4-4223-8403-b3bd9d9f7f2d",
+          "destination": "ebe53cc1-e4df-4094-b183-44f2c3975311",
+          "position": {
+            "start": 3,
+            "end": 4
+          }
+        }
+      ],
+      "isOpen": true,
+      "itemSymbols": []
+    }
+  ],
+  "glossar": [
+    {
+      "id": "g1",
+      "keywords": [
+        "TLS-Verschlüsselung",
+        "TLS"
+      ],
+      "title": "TLS-Verschlüsselung",
+      "content": "<p>Als Abkürzung steht TLS steht für <strong>Transport Layer Security </strong>und ist ein Verschlüsselungsstandard, welcher eine sichere Datenübertragung gewährleistet. ...</p><p>Sie können eine sichere Internetverbindung an dem </p><p> <img src=\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjEwOCIgeT0iNDM2IiB3aWR0aD0iMTkiIGhlaWdodD0iMjUiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDApIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTA4IC00MzYpIj48cGF0aCBkPSJNMTE3LjcxOCA0NTUuMjUzIDExNy43MTggNDU2LjkyMyAxMTYuNDMyIDQ1Ni45MjMgMTE2LjQzMiA0NTUuMjUzQzExNS42OTMgNDU1LjAwMSAxMTUuMTQ3IDQ1NC4zMDggMTE1LjE0NyA0NTMuNDU3IDExNS4xNDcgNDUyLjQxOCAxMTYuMDE1IDQ1MS41NjcgMTE3LjA3NSA0NTEuNTY3IDExOC4xMzYgNDUxLjU2NyAxMTkuMDA0IDQ1Mi40MTggMTE5LjAwNCA0NTMuNDU3IDExOS4wMDQgNDU0LjI3NyAxMTguNDU3IDQ1NC45NyAxMTcuNzE4IDQ1NS4yNTNaTTExMi4yNTQgNDQzLjY5QzExMi4yNTQgNDQxLjA3NSAxMTQuNDA3IDQzOC45NjQgMTE3LjA3NSA0MzguOTY0IDExOS43NDMgNDM4Ljk2NCAxMjEuODk3IDQ0MS4wNzUgMTIxLjg5NyA0NDMuNjlMMTIxLjg5NyA0NDcuMTg4IDExNy4wNzUgNDQ2Ljg0MSAxMTIuMjU0IDQ0Ny4xODggMTEyLjI1NCA0NDMuNjlaTTEyMy44MjUgNDQ3LjMxNCAxMjMuODI1IDQ0My42OUMxMjMuODI1IDQ0MC4wMzYgMTIwLjgwNCA0MzcuMDc0IDExNy4wNzUgNDM3LjA3NCAxMTMuMzQ3IDQzNy4wNzQgMTEwLjMyNSA0NDAuMDM2IDExMC4zMjUgNDQzLjY5TDExMC4zMjUgNDQ3LjMxNCAxMDguMDc1IDQ0Ny40NzEgMTA4LjA3NSA0NTkuNDQ0IDExNy4wNzUgNDYwLjA3NCAxMjYuMDc1IDQ1OS40NDQgMTI2LjA3NSA0NDcuNDcxIDEyMy44MjUgNDQ3LjMxNFoiIGZpbGw9IiMwMDQ1OTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=\"></p><p>Symbol erkennen....</p>"
+    }
+  ],
+  "isDialogFullsize": true,
+  "isDetailedIcons": false,
+  "fixedLabels": {
+    "headerSource": "Datenkategorie",
+    "headerPurpose": "Verwendungszweck"
+  },
+  "colors": {
+    "canvasBackground": "#ffffff",
+    "headerSourceLabel": "#ffffff",
+    "headerSourceIcon": "#ffffff",
+    "headerSourceBackground": "#006ba2",
+    "headerSourceArrowBackground": "#006ba2",
+    "headerProcessLabel": "#ffffff",
+    "headerProcessIcon": "#ffffff",
+    "headerProcessBackground": "#006ba2",
+    "headerProcessArrowLeftBackground": "#006ba2",
+    "headerProcessArrowRightBackground": "#006ba2",
+    "headerPurposeLabel": "#ffffff",
+    "headerPurposeIcon": "#ffffff",
+    "headerPurposeBackground": "#006ba2",
+    "headerPurposeArrowBackground": "#006ba2",
+    "caseHeaderLabel": "#ffffff",
+    "caseHeaderIcon": "#ffffff",
+    "caseHeaderBackground": "#b11044",
+    "caseHeaderBackgroundGradient": null,
+    "caseBodyBackground": "#eeeeee",
+    "caseBorder": "#b11044",
+    "participantLabel": "#006ba2",
+    "participantIcon": "#006ba2",
+    "participantBorder": "#006ba2",
+    "participantBackground": "#ffffff",
+    "participantBackgroundGradient": "url(#white_gradient_2)",
+    "caseActionIdentifierChecked": "#006ba2",
+    "caseActionIdentifierUnchecked": "#006ba2",
+    "controlsLabel": "#ffffff",
+    "controlsBackground": "#006ba2",
+    "controlsBackgroundHover": "#008FD6",
+    "modelModeLabel": "#ffffff",
+    "modelModeBackground": "#48AAE6",
+    "textEllipsisBackground": "#48AAE6",
+    "textEllipsisLabel": "#ffffff",
+    "overlayBackground": "#48aae6",
+    "overlayLabel": "#ffffff",
+    "glossarKeyword": "#48AAE6",
+    "tutorialBackground": "#FFB136",
+    "tutorialLabel": "#000000"
+  },
+  "dimensions": {
+    "caseLabelSize": 1.3,
+    "headerLabelSize": 1.5,
+    "tutorialLabelSize": 10
+  },
+  "predefinedSymbols": [
+    {
+      "id": "b4a9c476-2d96-4f25-9354-a74b0901efde",
+      "title": "Info",
+      "icon": {
+        "id": "info",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjU0My4wNTlweCIgaGVpZ2h0PSI1NDMuMDU5cHgiIHZpZXdCb3g9IjAgMCA1NDMuMDU5IDU0My4wNTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU0My4wNTkgNTQzLjA1OTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0zNDYuNDM4LDQ2OC4xMzdoLTE4LjcyN1YxNzEuMDZjMC01LjA2Mi0xLjg1NS05LjQ1Ni01LjU1Ny0xMy4xN2MtMy43MDktMy43MDMtOC4wOTgtNS41NTctMTMuMTY0LTUuNTU3SDE5Ni42Mg0KCQkJYy01LjA3MywwLTkuNDYxLDEuODU0LTEzLjE3LDUuNTU3Yy0zLjcwOCwzLjcxNS01LjU2Myw4LjEwMy01LjU2MywxMy4xN3YzNy40NTRjMCw1LjA3NCwxLjg1NCw5LjQ2Miw1LjU2MywxMy4xNw0KCQkJYzMuNzAzLDMuNzE1LDguMDkxLDUuNTY5LDEzLjE3LDUuNTY5aDE4LjcyN3YyNDAuODgzSDE5Ni42MmMtNS4wNzMsMC05LjQ2MSwxLjg1NS0xMy4xNyw1LjU1Nw0KCQkJYy0zLjcwOCwzLjcxNS01LjU2Myw4LjEwNC01LjU2MywxMy4xN3YzNy40NTVjMCw1LjA3NCwxLjg1NCw5LjQ2MSw1LjU2MywxMy4xN2MzLjcwMywzLjcxNSw4LjA5MSw1LjU3LDEzLjE3LDUuNTdoMTQ5LjgxNw0KCQkJYzUuMDc0LDAsOS40NjEtMS44NTUsMTMuMTctNS41N2MzLjcwMy0zLjcwMSw1LjU2NC04LjA5LDUuNTY0LTEzLjE3di0zNy40NTVjMC01LjA2MS0xLjg1NS05LjQ1NS01LjU2NC0xMy4xNw0KCQkJQzM1NS44OTgsNDY5Ljk4NCwzNTEuNTA2LDQ2OC4xMzcsMzQ2LjQzOCw0NjguMTM3eiIvPg0KCQk8Y2lyY2xlIGN4PSIyNjcuNjczIiBjeT0iNjIuOTIiIHI9IjYyLjkyIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
+      },
+      "position": 0,
+      "isDialog": true,
+      "legend": true,
+      "legendLabel": "Allgemeine Informationen"
+    },
+    {
+      "id": "ce976938-6cff-423f-980c-c7368239e7b9",
+      "title": "Dauer der Speicherung",
+      "icon": {
+        "id": "clock",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0zNDcuMjE2LDMwMS4yMTFsLTcxLjM4Ny01My41NFYxMzguNjA5YzAtMTAuOTY2LTguODY0LTE5LjgzLTE5LjgzLTE5LjgzYy0xMC45NjYsMC0xOS44Myw4Ljg2NC0xOS44MywxOS44M3YxMTguOTc4DQoJCQljMCw2LjI0NiwyLjkzNSwxMi4xMzYsNy45MzIsMTUuODY0bDc5LjMxOCw1OS40ODljMy41NjksMi42NzcsNy43MzQsMy45NjYsMTEuODc4LDMuOTY2YzYuMDQ4LDAsMTEuOTk3LTIuNzE3LDE1Ljg4NC03Ljk1Mg0KCQkJQzM1Ny43NjYsMzIwLjIwOCwzNTUuOTgxLDMwNy43NzUsMzQ3LjIxNiwzMDEuMjExeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjU2LDBDMTE0LjgzMywwLDAsMTE0LjgzMywwLDI1NnMxMTQuODMzLDI1NiwyNTYsMjU2czI1Ni0xMTQuODMzLDI1Ni0yNTZTMzk3LjE2NywwLDI1NiwweiBNMjU2LDQ3Mi4zNDENCgkJCWMtMTE5LjI3NSwwLTIxNi4zNDEtOTcuMDY2LTIxNi4zNDEtMjE2LjM0MVMxMzYuNzI1LDM5LjY1OSwyNTYsMzkuNjU5YzExOS4yOTUsMCwyMTYuMzQxLDk3LjA2NiwyMTYuMzQxLDIxNi4zNDENCgkJCVMzNzUuMjc1LDQ3Mi4zNDEsMjU2LDQ3Mi4zNDF6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
+      },
+      "position": 3,
+      "isDialog": false,
+      "legend": true,
+      "legendLabel": "Dauer der Speicherung"
+    },
+    {
+      "id": "270c03d7-1194-46f8-be81-7ec56a74c20d",
+      "title": "Ort der Speicherung",
+      "icon": {
+        "id": "database_outlined",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDA3LjAwNSA0MDcuMDA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MDcuMDA1IDQwNy4wMDU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMzA1LjE3OCwxNS4zMkMyNzcuODc2LDUuNDM5LDI0MS43NjEsMCwyMDMuNTIyLDBTMTI5LjE0LDUuNDM5LDEwMS44MzcsMTUuMzJDNjIuNzU0LDI5LjQ2NCw1NC41MDMsNDcuNTc0LDU0LjUwMyw2MC4yNzUNCgkJCXYyODYuNDVjMCwxMi43MDcsOC4yNCwzMC44MjEsNDcuMzIsNDQuOTYyYzI3LjMsOS44NzYsNjMuNDEyLDE1LjMxNiwxMDEuNjYxLDE1LjMxNmMyMi40NTMsMC4wNzcsNDQuODY0LTEuOTM1LDY2Ljk0NS02LjAwOA0KCQkJYzUyLjEyOS0xMCw4Mi4wNzQtMjkuNzgzLDgyLjA3NC01NC4yN1Y2MC4yNzVDMzUyLjUwMyw0Ny41NzQsMzQ0LjI2MSwyOS40NjQsMzA1LjE3OCwxNS4zMnogTTEwOC42NzEsMzQuMTI1DQoJCQlDMTMzLjg0NywyNS4wMTUsMTY3LjUyNiwyMCwyMDMuNTAzLDIwYzM1Ljk3NywwLDY5LjY1Niw1LjAxOCw5NC44MzIsMTQuMTI5YzI1LjEzNyw5LjEsMzQuMDkzLDE5LjQ3MywzNC4wOTMsMjYuMTQ5DQoJCQljMCw2LjY3Ni04Ljk1NiwxNy4wNDgtMzQuMDkzLDI2LjE0NXYtMC4wMDFjLTI1LjE3Niw5LjExMi01OC44NTQsMTQuMTI5LTk0LjgzMiwxNC4xMjljLTM1Ljk3OCwwLTY5LjY1Ni01LjAxNy05NC44MzItMTQuMTI5DQoJCQljLTI1LjEzNy05LjEtMzQuMDkzLTE5LjQ3Mi0zNC4wOTMtMjYuMTQ4UzgzLjUzNCw0My4yMjMsMTA4LjY3MSwzNC4xMjV6IE0zMzIuNTAzLDM0Ni43MjVjMCw1LjQxNC01LjcsMTEuODU2LTE1LjU4MSwxNy42NzUNCgkJCWMtMTIuMDQsNy4wOTMtMjkuNDM2LDEyLjk1NS01MC4yNzIsMTYuOTUzYy0yMC44MjUsMy44MzctNDEuOTYyLDUuNzI5LTYzLjEzOCw1LjY1Yy0zNS45ODcsMC02OS43MS01LjAxNi05NC44NzktMTQuMTIzDQoJCQljLTI1LjEzLTkuMDk0LTM0LjEzLTE5LjQ3NC0zNC4xMy0yNi4xNTV2LTY0LjQwOGM4LjUyNCw1LjU3OSwxNy42OTksMTAuMDk0LDI3LjMyLDEzLjQ0Ng0KCQkJYzI3LjMsOS44NzYsNjMuNDEyLDE1LjMxNiwxMDEuNjYxLDE1LjMxNmMzOC4yNDksMCw3NC4zOTQtNS40NCwxMDEuNjktMTUuMzE2YzkuNjIzLTMuMzUyLDE4LjgwMS03Ljg2NywyNy4zMjktMTMuNDQ2VjM0Ni43MjV6DQoJCQkgTTMzMi41MDMsMjUwLjhjMCw2LjY4MS04Ljk5MywxNy4wNjEtMzQuMTI1LDI2LjE1NWMtMjUuMTY5LDkuMTA3LTU4Ljg2OSwxNC4xMjMtOTQuODU2LDE0LjEyM3MtNjkuNzE1LTUuMDE2LTk0Ljg4NC0xNC4xMjMNCgkJCWMtMjUuMTM1LTkuMDkzLTM0LjEzNS0xOS40NzMtMzQuMTM1LTI2LjE1NXYtNjMuNzQ2YzguNTI0LDUuNTc5LDE3LjY5OSwxMC4wOTQsMjcuMzIsMTMuNDQ2DQoJCQljMjcuMyw5Ljg3Niw2My40MTIsMTUuMzE1LDEwMS42NjEsMTUuMzE1YzM4LjI0OSwwLDc0LjM5NC01LjQzOSwxMDEuNjktMTUuMzE1YzkuNjIzLTMuMzUyLDE4LjgwMS03Ljg2NywyNy4zMjktMTMuNDQ2VjI1MC44eg0KCQkJIE0zMzIuNTAzLDE1NS41MzhjMCw2LjY4MS04Ljk5MywxNy4wNjItMzQuMTI1LDI2LjE1NXYtMC4wMDFjLTI1LjE2OSw5LjEwNy01OC44NjksMTQuMTIyLTk0Ljg1NiwxNC4xMjINCgkJCXMtNjkuNzE5LTUuMDE0LTk0Ljg4NC0xNC4xMjJjLTI1LjEzNS05LjA5Mi0zNC4xMzUtMTkuNDczLTM0LjEzNS0yNi4xNTRWOTEuNzgyYzguNTI2LDUuNTc5LDE3LjcwMiwxMC4wOTUsMjcuMzI0LDEzLjQ0Nw0KCQkJYzI3LjMsOS44ODEsNjMuNDE4LDE1LjMyMywxMDEuNjU3LDE1LjMyM2MzOC4yMzksMCw3NC4zODItNS40NDIsMTAxLjY4NS0xNS4zMjNjOS42MjUtMy4zNTIsMTguODA0LTcuODY4LDI3LjMzNC0xMy40NDdWMTU1LjUzOHoNCgkJCSIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjI2LjUwMywxNDYuNWgtNDZjLTUuNTIzLDAtMTAsNC40NzctMTAsMTBzNC40NzcsMTAsMTAsMTBoNDZjNS41MjMsMCwxMC00LjQ3NywxMC0xMFMyMzIuMDI1LDE0Ni41LDIyNi41MDMsMTQ2LjV6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMjYuNTAzLDI0MC41aC00NmMtNS41MjMsMC0xMCw0LjQ3Ny0xMCwxMGMwLDUuNTIzLDQuNDc3LDEwLDEwLDEwaDQ2YzUuNTIzLDAsMTAtNC40NzcsMTAtMTANCgkJCUMyMzYuNTAzLDI0NC45NzcsMjMyLjAyNSwyNDAuNSwyMjYuNTAzLDI0MC41eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjI2LjUwMywzMzcuNWgtNDZjLTUuNTIzLDAtMTAsNC40NzctMTAsMTBjMCw1LjUyMyw0LjQ3NywxMCwxMCwxMGg0NmM1LjUyMywwLDEwLTQuNDc3LDEwLTEwDQoJCQlDMjM2LjUwMywzNDEuOTc3LDIzMi4wMjUsMzM3LjUsMjI2LjUwMywzMzcuNXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+      },
+      "position": 3,
+      "isDialog": false,
+      "legend": false,
+      "legendLabel": "Ort der Speicherung"
+    }
+  ],
+  "customSymbols": [
+    {
+      "id": "9488e9d5-7a80-4d9c-b053-66669e4f791e",
+      "title": "Neues Symbol",
+      "icon": {
+        "id": "info",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjU0My4wNTlweCIgaGVpZ2h0PSI1NDMuMDU5cHgiIHZpZXdCb3g9IjAgMCA1NDMuMDU5IDU0My4wNTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU0My4wNTkgNTQzLjA1OTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0zNDYuNDM4LDQ2OC4xMzdoLTE4LjcyN1YxNzEuMDZjMC01LjA2Mi0xLjg1NS05LjQ1Ni01LjU1Ny0xMy4xN2MtMy43MDktMy43MDMtOC4wOTgtNS41NTctMTMuMTY0LTUuNTU3SDE5Ni42Mg0KCQkJYy01LjA3MywwLTkuNDYxLDEuODU0LTEzLjE3LDUuNTU3Yy0zLjcwOCwzLjcxNS01LjU2Myw4LjEwMy01LjU2MywxMy4xN3YzNy40NTRjMCw1LjA3NCwxLjg1NCw5LjQ2Miw1LjU2MywxMy4xNw0KCQkJYzMuNzAzLDMuNzE1LDguMDkxLDUuNTY5LDEzLjE3LDUuNTY5aDE4LjcyN3YyNDAuODgzSDE5Ni42MmMtNS4wNzMsMC05LjQ2MSwxLjg1NS0xMy4xNyw1LjU1Nw0KCQkJYy0zLjcwOCwzLjcxNS01LjU2Myw4LjEwNC01LjU2MywxMy4xN3YzNy40NTVjMCw1LjA3NCwxLjg1NCw5LjQ2MSw1LjU2MywxMy4xN2MzLjcwMywzLjcxNSw4LjA5MSw1LjU3LDEzLjE3LDUuNTdoMTQ5LjgxNw0KCQkJYzUuMDc0LDAsOS40NjEtMS44NTUsMTMuMTctNS41N2MzLjcwMy0zLjcwMSw1LjU2NC04LjA5LDUuNTY0LTEzLjE3di0zNy40NTVjMC01LjA2MS0xLjg1NS05LjQ1NS01LjU2NC0xMy4xNw0KCQkJQzM1NS44OTgsNDY5Ljk4NCwzNTEuNTA2LDQ2OC4xMzcsMzQ2LjQzOCw0NjguMTM3eiIvPg0KCQk8Y2lyY2xlIGN4PSIyNjcuNjczIiBjeT0iNjIuOTIiIHI9IjYyLjkyIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
+      },
+      "position": 0,
+      "isDialog": false,
+      "legend": false,
+      "legendLabel": ""
+    },
+    {
+      "id": "36d95911-ef4d-4e0d-bfc3-552a64da660f",
+      "title": "Sicherheit",
+      "icon": {
+        "id": "verified",
+        "dataUri": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQ1OS42NjkgODIuOTA2LTE5Ni04MS4zNzdjLTQuOTEtMi4wMzgtMTAuNDI5LTIuMDM5LTE1LjMzOCAwbC0xOTYgODEuMzc3Yy03LjQ2NSAzLjEtMTIuMzMxIDEwLjM4OC0xMi4zMzEgMTguNDcxdjk4LjkyNWMwIDEzNi4yMTMgODIuMzI5IDI1OC43NCAyMDguNDQyIDMxMC4yMTUgNC44NDQgMS45NzcgMTAuMjcxIDEuOTc3IDE1LjExNiAwIDEyNi4xMTEtNTEuNDc0IDIwOC40NDItMTc0LjAwMSAyMDguNDQyLTMxMC4yMTV2LTk4LjkyNWMwLTguMDgzLTQuODY1LTE1LjM3MS0xMi4zMzEtMTguNDcxem0tMjcuNjY5IDExNy4zOTZjMCAxMTUuNzk1LTY4IDIyMi4zOTItMTc2IDI2OS45NzQtMTA1LjExNC00Ni4zMTEtMTc2LTE1MS4wNDEtMTc2LTI2OS45NzR2LTg1LjU3M2wxNzYtNzMuMDc0IDE3NiA3My4wNzR6bS0xOTguMTA2IDY3LjQxNCA4NS45NjQtODUuOTYzYzcuODEtNy44MSAyMC40NzMtNy44MTEgMjguMjg0IDBzNy44MSAyMC40NzQtLjAwMSAyOC4yODRsLTEwMC4xMDUgMTAwLjEwNWMtNy44MTIgNy44MTItMjAuNDc1IDcuODA5LTI4LjI4NCAwbC01NS44OTQtNTUuODk0Yy03LjgxMS03LjgxMS03LjgxMS0yMC40NzQgMC0yOC4yODRzMjAuNDc0LTcuODExIDI4LjI4NCAweiIvPjwvZz48L3N2Zz4="
+      },
+      "position": 0,
+      "isDialog": true,
+      "legend": true,
+      "legendLabel": "Informationen zur Sicherheit"
+    },
+    {
+      "id": "307e06a8-35ed-4238-856f-7e5c8b805925",
+      "title": "Server",
+      "icon": {
+        "id": "database_outlined",
+        "dataUri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDA3LjAwNSA0MDcuMDA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MDcuMDA1IDQwNy4wMDU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMzA1LjE3OCwxNS4zMkMyNzcuODc2LDUuNDM5LDI0MS43NjEsMCwyMDMuNTIyLDBTMTI5LjE0LDUuNDM5LDEwMS44MzcsMTUuMzJDNjIuNzU0LDI5LjQ2NCw1NC41MDMsNDcuNTc0LDU0LjUwMyw2MC4yNzUNCgkJCXYyODYuNDVjMCwxMi43MDcsOC4yNCwzMC44MjEsNDcuMzIsNDQuOTYyYzI3LjMsOS44NzYsNjMuNDEyLDE1LjMxNiwxMDEuNjYxLDE1LjMxNmMyMi40NTMsMC4wNzcsNDQuODY0LTEuOTM1LDY2Ljk0NS02LjAwOA0KCQkJYzUyLjEyOS0xMCw4Mi4wNzQtMjkuNzgzLDgyLjA3NC01NC4yN1Y2MC4yNzVDMzUyLjUwMyw0Ny41NzQsMzQ0LjI2MSwyOS40NjQsMzA1LjE3OCwxNS4zMnogTTEwOC42NzEsMzQuMTI1DQoJCQlDMTMzLjg0NywyNS4wMTUsMTY3LjUyNiwyMCwyMDMuNTAzLDIwYzM1Ljk3NywwLDY5LjY1Niw1LjAxOCw5NC44MzIsMTQuMTI5YzI1LjEzNyw5LjEsMzQuMDkzLDE5LjQ3MywzNC4wOTMsMjYuMTQ5DQoJCQljMCw2LjY3Ni04Ljk1NiwxNy4wNDgtMzQuMDkzLDI2LjE0NXYtMC4wMDFjLTI1LjE3Niw5LjExMi01OC44NTQsMTQuMTI5LTk0LjgzMiwxNC4xMjljLTM1Ljk3OCwwLTY5LjY1Ni01LjAxNy05NC44MzItMTQuMTI5DQoJCQljLTI1LjEzNy05LjEtMzQuMDkzLTE5LjQ3Mi0zNC4wOTMtMjYuMTQ4UzgzLjUzNCw0My4yMjMsMTA4LjY3MSwzNC4xMjV6IE0zMzIuNTAzLDM0Ni43MjVjMCw1LjQxNC01LjcsMTEuODU2LTE1LjU4MSwxNy42NzUNCgkJCWMtMTIuMDQsNy4wOTMtMjkuNDM2LDEyLjk1NS01MC4yNzIsMTYuOTUzYy0yMC44MjUsMy44MzctNDEuOTYyLDUuNzI5LTYzLjEzOCw1LjY1Yy0zNS45ODcsMC02OS43MS01LjAxNi05NC44NzktMTQuMTIzDQoJCQljLTI1LjEzLTkuMDk0LTM0LjEzLTE5LjQ3NC0zNC4xMy0yNi4xNTV2LTY0LjQwOGM4LjUyNCw1LjU3OSwxNy42OTksMTAuMDk0LDI3LjMyLDEzLjQ0Ng0KCQkJYzI3LjMsOS44NzYsNjMuNDEyLDE1LjMxNiwxMDEuNjYxLDE1LjMxNmMzOC4yNDksMCw3NC4zOTQtNS40NCwxMDEuNjktMTUuMzE2YzkuNjIzLTMuMzUyLDE4LjgwMS03Ljg2NywyNy4zMjktMTMuNDQ2VjM0Ni43MjV6DQoJCQkgTTMzMi41MDMsMjUwLjhjMCw2LjY4MS04Ljk5MywxNy4wNjEtMzQuMTI1LDI2LjE1NWMtMjUuMTY5LDkuMTA3LTU4Ljg2OSwxNC4xMjMtOTQuODU2LDE0LjEyM3MtNjkuNzE1LTUuMDE2LTk0Ljg4NC0xNC4xMjMNCgkJCWMtMjUuMTM1LTkuMDkzLTM0LjEzNS0xOS40NzMtMzQuMTM1LTI2LjE1NXYtNjMuNzQ2YzguNTI0LDUuNTc5LDE3LjY5OSwxMC4wOTQsMjcuMzIsMTMuNDQ2DQoJCQljMjcuMyw5Ljg3Niw2My40MTIsMTUuMzE1LDEwMS42NjEsMTUuMzE1YzM4LjI0OSwwLDc0LjM5NC01LjQzOSwxMDEuNjktMTUuMzE1YzkuNjIzLTMuMzUyLDE4LjgwMS03Ljg2NywyNy4zMjktMTMuNDQ2VjI1MC44eg0KCQkJIE0zMzIuNTAzLDE1NS41MzhjMCw2LjY4MS04Ljk5MywxNy4wNjItMzQuMTI1LDI2LjE1NXYtMC4wMDFjLTI1LjE2OSw5LjEwNy01OC44NjksMTQuMTIyLTk0Ljg1NiwxNC4xMjINCgkJCXMtNjkuNzE5LTUuMDE0LTk0Ljg4NC0xNC4xMjJjLTI1LjEzNS05LjA5Mi0zNC4xMzUtMTkuNDczLTM0LjEzNS0yNi4xNTRWOTEuNzgyYzguNTI2LDUuNTc5LDE3LjcwMiwxMC4wOTUsMjcuMzI0LDEzLjQ0Nw0KCQkJYzI3LjMsOS44ODEsNjMuNDE4LDE1LjMyMywxMDEuNjU3LDE1LjMyM2MzOC4yMzksMCw3NC4zODItNS40NDIsMTAxLjY4NS0xNS4zMjNjOS42MjUtMy4zNTIsMTguODA0LTcuODY4LDI3LjMzNC0xMy40NDdWMTU1LjUzOHoNCgkJCSIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjI2LjUwMywxNDYuNWgtNDZjLTUuNTIzLDAtMTAsNC40NzctMTAsMTBzNC40NzcsMTAsMTAsMTBoNDZjNS41MjMsMCwxMC00LjQ3NywxMC0xMFMyMzIuMDI1LDE0Ni41LDIyNi41MDMsMTQ2LjV6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMjYuNTAzLDI0MC41aC00NmMtNS41MjMsMC0xMCw0LjQ3Ny0xMCwxMGMwLDUuNTIzLDQuNDc3LDEwLDEwLDEwaDQ2YzUuNTIzLDAsMTAtNC40NzcsMTAtMTANCgkJCUMyMzYuNTAzLDI0NC45NzcsMjMyLjAyNSwyNDAuNSwyMjYuNTAzLDI0MC41eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjI2LjUwMywzMzcuNWgtNDZjLTUuNTIzLDAtMTAsNC40NzctMTAsMTBjMCw1LjUyMyw0LjQ3NywxMCwxMCwxMGg0NmM1LjUyMywwLDEwLTQuNDc3LDEwLTEwDQoJCQlDMjM2LjUwMywzNDEuOTc3LDIzMi4wMjUsMzM3LjUsMjI2LjUwMywzMzcuNXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+      },
+      "position": 0,
+      "isDialog": true,
+      "legend": true,
+      "legendLabel": "Datenspeicherung auf Fremdsystemen"
+    }
+  ],
+  "tutorial": {
+    "id": "970c03d7-1194-46f8-be81-7ec56a74c20d",
+    "steps": [
+      {
+        "id": "controls",
+        "isActive": true,
+        "title": "Steuerelemente",
+        "text": "<p>Zur Steuerung des Datenmodells: Eine Legende erklärt die Symbole, Farbwahl, Pfeiltypen etc., die Ansicht kann vergrößert oder verkleinert werden</p>",
+        "itemId": "controls"
+      },
+      {
+        "id": "header",
+        "isActive": true,
+        "title": "Kopfzeile",
+        "text": "<p>Hier findet der Nutzer/ die Nutzerin die wesentlichen Überschriften zur Orientierung in dem Modell</p>",
+        "itemId": "header"
+      },
+      {
+        "id": "520c03d7-1194-46f8-be81-7ec56a74c20d",
+        "isActive": true,
+        "title": "Datenkategorie",
+        "text": "<p>Hier werden die jeweiligen Datenfelder oder Datenkategorien, die in den rechts aufgeführten Prozessschritten verarbeitet werden, angegeben</p>",
+        "itemId": "5-dp1"
+      },
+      {
+        "id": "c73ae592-e291-4fa4-b389-de277dbaec98",
+        "isActive": true,
+        "title": "Prozessschritt",
+        "text": "<p>Hier werden die jeweiligen Prozessschritte der Verarbeitung angegeben</p>",
+        "itemId": "1-a1"
+      },
+      {
+        "id": "f24623ec-2c4d-4ed0-83a4-acd66848325b",
+        "isActive": true,
+        "title": "Verwendungszweck",
+        "text": "<p>Hier werden die Verwendungszwecke der Datenverarbeitung, spezifisch für die links stehenden Prozessschritte, angegeben</p>",
+        "itemId": "1-dp1"
+      },
+      {
+        "id": "951e51e4-5281-491d-b2eb-1914038f6c1a",
+        "isActive": true,
+        "title": "Icons zu relevanten Aspekten",
+        "text": "<p>Unterschiedliche, möglichst intuitive Icons bieten sich für die Darstellung relevanter Aspekte an - hier zum Beispiel Informationen zur Sicherheit</p>",
+        "itemId": "7cb852ba-ac97-4e88-afd8-cc7349f17f27"
+      },
+      {
+        "id": "7d27e201-0ec1-4c3a-94ef-f01271804e9a",
+        "isActive": true,
+        "title": "Icons zu relevanten Aspekten",
+        "text": "<p>Ein weiteres Beispiel ist ein Icon, welches auf fremde Server hinweisen kann</p>",
+        "itemId": "9190790a-2ef4-4f30-98ac-8e94e22b312c"
+      },
+      {
+        "id": "43897b54-09d2-497f-bc16-6a066da25259",
+        "isActive": true,
+        "title": "Pfeiltypen",
+        "text": "<p>Analog können Pfeilarten differenziert werden, um unterschiedliche digitale, oder auch analoge Prozessschritte darzustellen. </p>",
+        "itemId": "d423a50a-582b-4794-be00-742433139f17"
+      }
+    ]
+  }
+}

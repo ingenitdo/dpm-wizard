@@ -1,5 +1,4 @@
 import * as React from "react";
-import './app_viewer.css';
 import { Global, jsx } from "@emotion/core";
 import { globals } from "../styles/globals";
 import { ModelViewer } from "./ModelViewer";

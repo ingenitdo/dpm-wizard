@@ -55,6 +55,7 @@ interface Props {
   isMobile: boolean;
   yScrollOffset: number;
   onOpenCase: ( caseId: string, item: string | undefined ) => void;
+  onScrollTop: () => void;
   onClose: ( neverShowAgain: boolean ) => void;
 }
 
@@ -77,7 +78,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
   const [highlightWidth, setHighlightWidth] = useState<number>( 0 );
   const [highlightHeight, setHighlightHeight] = useState<number>( 0 );
 
-  const widthFactor = props.isMobile ? 0.8 : 0.5
+  const widthFactor = props.isMobile ? 0.6 : 0.4
   const [x, setX] = useState<number>( 0 );
   const [y, setY] = useState<number>( props.canvasOffset );
   const [width, setWidth] = useState<number>( props.canvasWidth * widthFactor );
@@ -92,7 +93,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
   const [isCloseTutorialDialog, setIsCloseTutorialDialog] = useState<boolean>( false );
 
   const getAdjustedY = (value: number) => {
-    return value + height*1.25 >= window.innerHeight - props.canvasOffset || value <= highlightY ? (window.innerHeight - height*1.25 - props.canvasOffset) : value;
+    return value + y >= window.innerHeight ? window.innerHeight - height*2 : value;
   }
 
   useEffect(() => {
@@ -102,14 +103,15 @@ const Tutorial: React.FunctionComponent<Props> = props => {
   useEffect( () => {
     setWidth( props.canvasWidth * widthFactor );
   }, [props.canvasWidth] );
+
   useEffect( () => {
     setY( y + props.canvasOffset );
   }, [props.canvasOffset] );
 
-  const openCase = ( item: ProcessedCase |ProcessedDataSource | ProcessedDataPurpose | ProcessedAction | ProcessedConnection ) => {
+  const openCase = ( item: ProcessedCase | ProcessedDataSource | ProcessedDataPurpose | ProcessedAction | ProcessedConnection ) => {
     const affectedCase = props.processedCases.find( ( processedCase: ProcessedCase ) => {
       if( "id" in item) {
-        return processedCase;
+        return processedCase.id === getIdByItem(item);
       }
       if( "dataSource" in item ) {
         return processedCase.dataSources.includes( item );
@@ -133,6 +135,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
     allItems.map( ( item ) => {
       if( "participant" in item ) {
         if( currentTutorialStep.itemId === item.participant.id ) {
+          props.onScrollTop();
           setIndicatorPosition( "left" );
           setX( item.x + item.width * 0.2 + ((props.canvasWidth - props.factorizedCanvasWidth) / 2) );
           setY( getAdjustedY(item.y + getAbsoluteValue( props.canvasWidth, HEADER_HEIGHT ) + props.canvasOffset + highlightPadding*2));
@@ -170,10 +173,10 @@ const Tutorial: React.FunctionComponent<Props> = props => {
         if( currentTutorialStep.itemId === item.dataSource.id ) {
           openCase( item );
           setX( item.x + item.width * 0.2 + ((props.canvasWidth - props.factorizedCanvasWidth) / 2) );
-          setY( getAdjustedY(item.y + props.canvasOffset - props.yScrollOffset + item.height + highlightPadding*4));
+          setY( getAdjustedY(item.y + props.canvasOffset - highlightPadding - props.yScrollOffset + item.height));
           setIndicatorPosition( "left" );
           setHighlightX( item.x - highlightPadding*2 );
-          setHighlightY( item.y + props.canvasOffset - highlightPadding - props.yScrollOffset );
+          setHighlightY( item.y + props.canvasOffset - highlightPadding - props.yScrollOffset);
           setHighlightWidth( item.width + highlightPadding * 2 );
           setHighlightHeight( item.height + highlightPadding * 2 );
           setCurrentConnection( null );
@@ -191,7 +194,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
             setX( item.x + item.width * 0.2 + ((props.canvasWidth - props.factorizedCanvasWidth) / 2) );
             setIndicatorPosition( "left" );
           }
-          setY( getAdjustedY(item.y + item.height + props.canvasOffset - props.yScrollOffset + highlightPadding*4));
+          setY( getAdjustedY(item.y + props.canvasOffset - highlightPadding - props.yScrollOffset + item.height));
           setHighlightX( item.x - highlightPadding * 2 );
           setHighlightY( item.y + props.canvasOffset - highlightPadding - props.yScrollOffset );
           setHighlightWidth( item.width + highlightPadding * 2 );
@@ -203,7 +206,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
         if( currentTutorialStep.itemId === item.action.id ) {
           openCase( item );
           setX( item.x + item.width * 0.2 + ((props.canvasWidth - props.factorizedCanvasWidth) / 2) );
-          setY( getAdjustedY(item.y + item.height + props.canvasOffset - props.yScrollOffset + highlightPadding*4));
+          setY( getAdjustedY(item.y + props.canvasOffset - highlightPadding - props.yScrollOffset + item.height));
           setIndicatorPosition( "left" );
           setHighlightX( item.x - highlightPadding*2 );
           setHighlightY( item.y + props.canvasOffset - highlightPadding - props.yScrollOffset );
@@ -230,6 +233,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
       }
     } );
     if( currentTutorialStep.itemId === "controls" ) {
+      props.onScrollTop();
       setIndicatorPosition( "right" );
       setX( props.canvasWidth - width - props.factorizedCanvasWidth * 0.1 );
       setY( getAdjustedY(props.canvasOffset + highlightPadding*4));
@@ -240,10 +244,11 @@ const Tutorial: React.FunctionComponent<Props> = props => {
       setCurrentConnection( null );
     }
     if( currentTutorialStep.itemId === "header" ) {
+      props.onScrollTop();
       setIndicatorPosition( "right" );
       setX( props.canvasWidth - width - props.factorizedCanvasWidth * 0.1 );
       setY( getAdjustedY(props.canvasOffset + getAbsoluteValue( props.factorizedCanvasWidth, HEADER_MARGIN_TOP ) + getAbsoluteValue(
-        props.canvasWidth, HEADER_HEIGHT ) + getAbsoluteValue( props.factorizedCanvasWidth, HEADER_MARGIN_BOTTOM ) + highlightPadding*2 ));
+        props.canvasWidth, HEADER_HEIGHT ) + getAbsoluteValue( props.factorizedCanvasWidth, HEADER_MARGIN_BOTTOM ) - highlightPadding*2));
       setHighlightX( 0 );
       setHighlightY( props.canvasOffset - getAbsoluteValue( props.factorizedCanvasWidth, HEADER_MARGIN_TOP ) * 2 );
       setHighlightWidth( props.canvasWidth * 0.996 );
@@ -343,14 +348,14 @@ const Tutorial: React.FunctionComponent<Props> = props => {
             borderBottom: "1.25vw solid " + props.colors.tutorialBackground,
           }])}/>
 
-          <h1 css={theme => ([{
+          <div css={theme => ([{
             margin: "1vw 2vw 1vw 1vw",
             fontSize: (props.labelSize + 2) / 10 * 0.8 + "vw",
+            fontWeight: 700,
             color: props.colors.tutorialLabel
-
           }])}>
             {currentTutorialStep.title}
-          </h1>
+          </div>
 
           <div css={theme => ([{
             position: "absolute",
@@ -366,16 +371,16 @@ const Tutorial: React.FunctionComponent<Props> = props => {
             <Icon name={"close"} size={"1vw"} color={props.colors.tutorialLabel}/>
           </div>
 
-          <h1 css={theme => ([{
+          <div css={theme => ([{
             position: "absolute",
             bottom: 0,
             margin: "1vw",
             fontSize: props.labelSize / 10 * 0.8 + "vw",
+            fontWeight: 700,
             color: props.colors.tutorialLabel
-
           }])}>
             {activeTutorialSteps.indexOf( currentTutorialStep ) + 1} / {activeTutorialSteps.length}
-          </h1>
+          </div>
 
           <div css={theme => ([{
             maxHeight: window.innerHeight/3,
@@ -383,7 +388,7 @@ const Tutorial: React.FunctionComponent<Props> = props => {
             marginRight: 1 + "vw",
             marginBottom: 3 + "vw"
           }])}>
-            <p css={theme => ([{
+            <div css={theme => ([{
               margin: "1vw",
               fontSize: props.labelSize / 10 * 0.8 + "vw",
               fontWeight: 500,

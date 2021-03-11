@@ -86,8 +86,7 @@ const Header: React.FunctionComponent<Props> = props => {
 
   return (
     <div css={theme => ([{
-//      transition: 'height 0.5s ease-in',
-      position: props.yScrollOffset !== 0 ? 'fixed' : 'absolute',
+      position: 'absolute',
       width: props.canvasWidth - props.scrollbarWidth,
       top: props.yScrollOffset !== 0 ? 0 : 'initial',
       backgroundColor: !props.isEditorMode ? props.colors.canvasBackground : "transparent",
@@ -106,8 +105,9 @@ const Header: React.FunctionComponent<Props> = props => {
       )}
       {!props.isEditorMode && props.masterData.controlOptions.showSubTitle && (
         <SubTitle subtitle={props.subtitle}
-                  height={props.yScrollOffset > 0 ? 0 : subtitleHeight}
-                  marginBottom={props.yScrollOffset > 0 ? 0 : subtitleMarginBottom}
+//                  height={props.yScrollOffset > 0 ? 0 : subtitleHeight}
+                  height={subtitleHeight}
+                  marginBottom={subtitleMarginBottom}
                   isInfoDialogBlurred={props.isInfoDialogBlurred}
         />
       )}

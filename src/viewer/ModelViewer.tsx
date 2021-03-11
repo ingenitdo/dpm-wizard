@@ -61,6 +61,7 @@ import { DataPurpose } from "../entities/DataPurpose";
 import { Tutorial } from "./tutorial/Tutorial";
 import { TutorialType } from "../entities/TutorialType";
 import { BoxType } from "../entities/BoxType";
+import { ConnectionType } from "../entities/ConnectionType";
 
 const lang_en = require( "./lang/lang_en.json" );
 const lang_de = require( "./lang/lang_de.json" );
@@ -124,7 +125,28 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
     setShowDetailedModel( props.showDetailedModel );
   }, [props.showDetailedModel] );
 
-  let { masterData, language, title, subtitle, header, participants, connectionTypes, boxTypes, cases, sourceInformation, revisionHistory, glossar, isDialogFullsize, isDetailedIcons, fixedLabels, colors, dimensions, predefinedSymbols, customSymbols, tutorial }
+  let {
+    masterData,
+    language,
+    title,
+    subtitle,
+    header,
+    participants,
+    connectionTypes,
+    boxTypes,
+    cases,
+    sourceInformation,
+    revisionHistory,
+    glossar,
+    isDialogFullsize,
+    isDetailedIcons,
+    fixedLabels,
+    colors,
+    dimensions,
+    predefinedSymbols,
+    customSymbols,
+    tutorial
+  }
     = (showDetailedModel ? props.detailedModel : props.simpleModel);
 
   predefinedSymbols = predefinedSymbols ? predefinedSymbols : [];
@@ -134,7 +156,7 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
 
   const [participantsState, setParticipantsState] = useState<Participant[]>( participants );
   const [boxTypesState, setBoxTypesState] = useState<BoxType[]>( boxTypes );
-
+  const [connectionTypesState, setConnectionTypesState] = useState<ConnectionType[]>( connectionTypes );
 
   const [activeLang, setActiveLang] = useState<FixedLabels>( lang_en );
 
@@ -246,7 +268,7 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
   }, [isMobile] );
 
   useEffect( () => {
-    if(!props.isEditorMode) {
+    if( !props.isEditorMode ) {
       resetYScrollOffset();
       setOpenCases( cases.map( ( c: any ) => c.isOpen ? c.id : null ) );
     }
@@ -285,15 +307,17 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
         [...predefinedSymbols, ...customSymbols] );
       setCasesState( tempCases );
       setParticipantsState( tempParticipants );
-      setBoxTypesState(boxTypes);
+      setBoxTypesState( boxTypes );
+      setConnectionTypesState( connectionTypes );
     }
-  }, [glossar, cases, participants] );
+  }, [glossar, cases, participants, boxTypes] );
 
-  let processedParticipants = participants ? processParticipants( participantsState, factorizedCanvasWidth, actualHeight ): [];
+  let processedParticipants = participants ?
+    processParticipants( participantsState, factorizedCanvasWidth, actualHeight ) :
+    [];
   let processedCases = processCases( showDetailedModel, casesState, factorizedCanvasWidth, actualHeight,
     processedParticipants, openCases,
-    connectionTypes, false, boxTypesState );
-
+    connectionTypesState, false, boxTypesState );
 
   useEffect( () => {
     if( props.isEditorMode ) {
@@ -314,7 +338,7 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     processedCases = processCases( showDetailedModel, casesState, factorizedCanvasWidth, actualHeight,
       processedParticipants, openCases,
-      connectionTypes, false, boxTypesState );
+      connectionTypesState, false, boxTypesState );
     setEllipsisDialogData( null );
   }, [openCases, casesState] );
 
@@ -341,18 +365,29 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
 
   const [tutorialYScrollOffset, setTutorialYScrollOffset] = useState<number>( 0 );
   const scrollToItem = ( caseId: string, itemId: string ) => {
-    if(!props.isEditorMode) {
+
+    if( !props.isEditorMode ) {
       const processedCase = processedCases.find( ( pC: ProcessedCase ) => pC.id === caseId );
 
       if( processedCase ) {
         const processedItem = processedCase.id === itemId ? processedCase : getItemByCaseAndId( processedCase, itemId );
-
         if( processedItem ) {
           if( currentRef && currentRef.current ) {
-            const scrollTop = processedCase.y + ("connection" in processedItem ? processedItem.y1 : processedItem.y)
+            const scrollTop = processedCase.y + (processedCase.id === itemId ? 0 : ("connection" in processedItem ? processedItem.y1 : processedItem.y))
               - canvasOffset * 2;
-            currentRef.current.parentElement.scrollTo( { top: scrollTop } );
-            const newValue = currentRef.current.parentElement.scrollTop;
+
+            let newValue = 0;
+            if( props.isPreviewMode ) {
+              currentRef.current.parentElement.scrollTo( { top: scrollTop } );
+              newValue = currentRef.current.parentElement.scrollTop;
+            }
+            else {
+              currentRef.current.parentElement.scrollTo( { top: 0 } );
+
+              currentRef.current.children[0].scrollTo( { top: scrollTop } );
+              newValue = currentRef.current.children[0].scrollTop;
+            }
+
             setTutorialYScrollOffset( newValue );
           }
         }
@@ -410,42 +445,44 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
   };
 
   const canvasOffset = getAbsoluteValue( factorizedCanvasWidth, HEADER_MARGIN_TOP )
-  + getAbsoluteValue( factorizedCanvasWidth, HEADER_MARGIN_BOTTOM )
-  + (!props.isEditorMode
-    ? (
-      (masterData.controlOptions.showTitle
-        ? getAbsoluteValue( factorizedCanvasWidth, TITLE_OFFSET )
-        : 0)
-      + (masterData.controlOptions.showSubTitle || browserName === 'Safari'
-        ? getAbsoluteValue( factorizedCanvasWidth, SUBTITLE_MARGIN_BOTTOM ) * 3
-        : 0)
-      + ((masterData.controlOptions.showModeToggle
-        || masterData.controlOptions.showLegend
-        || masterData.controlOptions.showFullscreen
-        || masterData.controlOptions.showZoom)
-        ? getAbsoluteValue( factorizedCanvasWidth, CONTROLS_HEIGHT )
-        : 0)
-      + (1 - zoomFactor) * (canvasWidth / 10)
-    ) : 0);
+    + getAbsoluteValue( factorizedCanvasWidth, HEADER_MARGIN_BOTTOM )
+    + (!props.isEditorMode
+      ? (
+        (masterData.controlOptions.showTitle
+          ? getAbsoluteValue( factorizedCanvasWidth, TITLE_OFFSET )
+          : 0)
+        + (masterData.controlOptions.showSubTitle || browserName === 'Safari'
+          ? getAbsoluteValue( factorizedCanvasWidth, SUBTITLE_MARGIN_BOTTOM ) * 3
+          : 0)
+        + ((masterData.controlOptions.showModeToggle
+          || masterData.controlOptions.showLegend
+          || masterData.controlOptions.showFullscreen
+          || masterData.controlOptions.showZoom)
+          ? getAbsoluteValue( factorizedCanvasWidth, CONTROLS_HEIGHT )
+          : 0)
+        + (1 - zoomFactor) * (factorizedCanvasWidth / 10)
+      ) : 0);
 
   // TutorialType
   const [tutorialState, setTutorialState] = useLocalStorage( 'tutorial', 'not-seen' );
   const [activeTutorial, setActiveTutorial] = useState<TutorialType | null>(
-    (tutorialState === 'not-seen' && masterData.controlOptions.showTutorial && !props.isEditorMode && !props.isPreviewMode) ? tutorial : null );
-
+    (tutorialState === 'not-seen' && masterData.controlOptions.showTutorial && !props.isEditorMode
+      && !props.isPreviewMode) ? tutorial : null );
 
   useEffect( () => {
     if( props.forceShowTutorial ) {
       setActiveTutorial( tutorial );
-      setZoomFactor(1);
+      setZoomFactor( 1 );
+      isInFullscreen() && toggleFullscreen();
     }
   }, [props.forceShowTutorial] );
 
-  useEffect(() => {
-    if(activeTutorial) {
-      setZoomFactor(1);
+  useEffect( () => {
+    if( activeTutorial ) {
+      setZoomFactor( 1 );
+      isInFullscreen() && toggleFullscreen();
     }
-  }, [activeTutorial])
+  }, [activeTutorial] )
 
   return (
     <div ref={currentRef}
@@ -471,7 +508,7 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
            })}
            ref={ref}
            onScroll={( e ) => {
-             if(activeTutorial === null) {
+             if( activeTutorial === null ) {
                setYScrollOffset( e.currentTarget.scrollTop );
              }
            }}
@@ -501,6 +538,15 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
                       onOpenCase={( caseId: string, itemId: string | undefined ) => {
                         handleOpenCase( caseId );
                         itemId && scrollToItem( caseId, itemId )
+                      }}
+                      onScrollTop={() => {
+                        if( props.isPreviewMode ) {
+                          currentRef.current.parentElement.scrollTo( { top: 0 } );
+                        }
+                        else {
+                          currentRef.current.children[0].scrollTo( { top: 0 } );
+                        }
+                        setTutorialYScrollOffset(0);
                       }}
                       onClose={( neverShowAgain: boolean ) => {
                         if( neverShowAgain ) {
@@ -945,7 +991,7 @@ const ModelViewer: React.FunctionComponent<Props> = props => {
                         isDialogFullsize={isDialogFullsize}
                         fixedLabels={fixedLabels}
                         language={activeLang}
-                        connectionTypes={connectionTypes}
+                        connectionTypes={connectionTypesState}
                         boxTypes={boxTypesState}
                         isLowMode={false}
                         onShowInfoText={( title: string[] | undefined, content: string | undefined ) => {

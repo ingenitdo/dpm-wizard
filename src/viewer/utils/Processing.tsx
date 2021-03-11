@@ -26,7 +26,7 @@ import {
   HEADER_OFFSET,
   MIN_GAP_HEIGHT,
   PARTICIPANTS_SIZE,
-  SHORTINFO_MARGIN_BOTTOM
+  SHORTINFO_MARGIN_BOTTOM, TEXT_SPACING
 } from "../Constants";
 import { getAbsoluteValue } from "./LayoutCalc";
 import { Participant } from "../../entities/Participant";
@@ -729,7 +729,7 @@ export const getCaseHeaderHeight = ( labels: string[], canvasWidth: number ) => 
         getAbsoluteValue( canvasWidth, CASE_HEADER_LABEL_SIZE ) ).length;
     } ).reduce( ( sum, current ) => sum + current, 0 );
 
-  return (caseHeaderLabelRows <= 1 ? 2 : caseHeaderLabelRows) * getAbsoluteValue( canvasWidth,
+  return (caseHeaderLabelRows <= 1 ? 2 : caseHeaderLabelRows * TEXT_SPACING) * getAbsoluteValue( canvasWidth,
     CASE_HEADER_HEIGHT );
 };
 

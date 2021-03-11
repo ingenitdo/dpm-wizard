@@ -6,20 +6,23 @@ import { useState } from "react";
 import { lightTheme } from "../../styles/light_theme";
 import { Language } from "../../entities/Language";
 import { dropShadow, fadeIn } from "../../styles/effects";
-import { hashHistory } from "../../uitls/hashHistory";
 import { ModelUploadDialog } from "./components/ModelUploadDialog";
 import { Model } from "../../entities/Model";
 import { Icon } from '../../components/icon_picker/Icon';
+import { ModelTemplateDialog } from "./components/ModelTemplateDialog";
+import { InstructionDialog } from "./components/InstructionDialog";
 
 export interface Props {
   pathname: string;
   activeLanguage: Language;
   onCreateNewModel: (  ) => void;
-  onUploadFile: ( model: Model ) => void;
+  onFile: ( model: Model ) => void;
 }
 
 const DashboardPage: React.FC<Props> = props => {
   const [isModelUploadDialogOpen, setIsModelUploadDialogOpen] = useState<boolean>( false );
+  const [isModelTemplateDialogOpen, setIsModelTemplateDialogOpen] = useState<boolean>( false );
+  const [isInstructionDialogOpen, setIsInstructionDialogOpen] = useState<boolean>( false );
 
   const renderLink = ( label: string, icon: string, func?: () => void,  href?: string ) => {
     const [isHovering, setIsHovering] = useState<boolean>( false );
@@ -142,7 +145,13 @@ const DashboardPage: React.FC<Props> = props => {
               <br/><br/>
               Mit Hilfe der Software können Unternehmen auf ihrer Webseite anschaulich visuell darstellen, welche Daten sie für welche Zwecke verarbeiten. Damit gibt die Themenplattform Unternehmen eine Hilfestellung, um freiwillig über die beispielsweise in der DSGVO geforderten Transparenzpflichten hinauszugehen und einen verantwortungsvollen Umgang mit Verbraucherdaten zu kommunizieren.
               <br/><br/>
-              Die Software wird Unternehmen kostenfrei und open source zur Verfügung gestellt und ist durch das Bayerische Staatsministerium für Umwelt und Verbraucherschutz gefördert. </h2>
+              Die Software wird Unternehmen kostenfrei und open source zur Verfügung gestellt und ist durch das Bayerische Staatsministerium für Umwelt und Verbraucherschutz gefördert.
+              <br/><br/>
+              Hintergrundinformationen zu CDR und dem Data Process Modeler finden Sie bei der <a css={theme => ([{
+                textDecoration: "none",
+                color: "#006BA2"
+            }])} href={"https://www.bayern-innovativ.de/netzwerke-und-thinknet/uebersicht-digitalisierung/verbraucherbelange/seite/data-process-modeler"} target={"_blank"}>ZD.B-Themenplattform Verbraucherbelange</a>.
+            </h2>
           </div>
           <div css={theme => (
             [
@@ -168,11 +177,11 @@ const DashboardPage: React.FC<Props> = props => {
               setIsModelUploadDialogOpen( true )
             } )}
             {renderLink(  props.activeLanguage.PAGE.DASHBOARD.LINK_3, "template", () => {
-//              hashHistory.push( "/wizard" )
-              alert("Aktuell noch nicht verfügbar");
+              setIsModelTemplateDialogOpen( true )
             } )}
             {renderLink( props.activeLanguage.PAGE.DASHBOARD.LINK_4, "documentation", () => {
-            }, "DPM-Nutzerhandbuch.pdf" )}
+              setIsInstructionDialogOpen(true);
+            } )}
           </div>
         </div>
         <div css={theme => (
@@ -234,6 +243,7 @@ const DashboardPage: React.FC<Props> = props => {
               [
                 {
                   display: "flex",
+                  alignItems: "center",
                   justifyContent: "space-between"
                 }
               ]
@@ -241,12 +251,12 @@ const DashboardPage: React.FC<Props> = props => {
               <a href={"https://concern.de/"}
                  target="_blank"
               >
-                <img src="img/concern.png"
+                <img src="img/concern_logo.png"
 
                      css={theme => (
                        [
                          {
-                           height: "60px",
+                           height: "40px",
                            transition: "height 0.5s ease-in-out",
                            marginRight: "40px"
                          }
@@ -277,7 +287,22 @@ const DashboardPage: React.FC<Props> = props => {
         <ModelUploadDialog onClose={() => {
           setIsModelUploadDialogOpen( false )
         }}
-                           onUploadFile={props.onUploadFile}
+                           onUploadFile={props.onFile}
+        />
+      )}
+      {isModelTemplateDialogOpen && (
+        <ModelTemplateDialog onClose={() => {
+          setIsModelTemplateDialogOpen( false )
+        }}
+                             onTemplateFile={props.onFile}
+        />
+      )}
+
+      {isInstructionDialogOpen && (
+        <InstructionDialog onClose={() => {
+          setIsInstructionDialogOpen( false )
+        }}
+                             onInstructionFile={props.onFile}
         />
       )}
 
